@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="163"/>
+	<property name="ireport.y" value="128"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -213,14 +213,14 @@ WHERE
 				<text><![CDATA[Item]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="80" y="6" width="183" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="80" y="6" width="173" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
 				<textElement textAlignment="Left">
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<text><![CDATA[Descripción]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="263" y="6" width="40" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="253" y="6" width="50" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
 				<textElement>
 					<paragraph leftIndent="3"/>
 				</textElement>
@@ -258,7 +258,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{mxtrainv_ITEM}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Texto Contenido" x="80" y="0" width="183" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
+				<reportElement style="Texto Contenido" x="80" y="0" width="173" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
 				<textElement>
 					<font size="8"/>
 					<paragraph leftIndent="3"/>
@@ -266,7 +266,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{mxctainv_DESCRIPCION}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Texto Contenido" x="263" y="0" width="40" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
+				<reportElement style="Texto Contenido" x="253" y="0" width="50" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
 				<textElement textAlignment="Left">
 					<font size="8"/>
 					<paragraph leftIndent="3"/>
