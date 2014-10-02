@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="2.0"/>
-	<property name="ireport.x" value="512"/>
-	<property name="ireport.y" value="48"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -48,7 +48,6 @@
      mxencped.`NUMERO_PEDIDO` AS mxencped_NUMERO_PEDIDO,
      mxencped.`DEPARTAMENTO` AS mxencped_DEPARTAMENTO,
      mxencped.`FECHA_ENTREGA` AS mxencped_FECHA_ENTREGA,
-     mxencped.`COMENTARIO` AS mxencped_COMENTARIO,
      mxencped.`SUB_TOTAL` AS mxencped_SUB_TOTAL,
      mxencped.`ITBM` AS mxencped_ITBM,
      mxencped.`TOTAL` AS mxencped_TOTAL,
@@ -91,11 +90,10 @@ WHERE
 	<field name="mxtrainv_DISPONIBLE" class="java.lang.Integer"/>
 	<field name="mxtrainv_COMENTARIO" class="java.lang.String"/>
 	<field name="mxtrainv_SOLICITADO" class="java.lang.Integer"/>
-	<field name="mxencped_FECHA" class="java.sql.Date"/>
+	<field name="mxencped_FECHA" class="java.sql.Timestamp"/>
 	<field name="mxencped_NUMERO_PEDIDO" class="java.lang.Integer"/>
 	<field name="mxencped_DEPARTAMENTO" class="java.lang.String"/>
 	<field name="mxencped_FECHA_ENTREGA" class="java.sql.Date"/>
-	<field name="mxencped_COMENTARIO" class="java.lang.String"/>
 	<field name="mxencped_SUB_TOTAL" class="java.math.BigDecimal"/>
 	<field name="mxencped_ITBM" class="java.math.BigDecimal"/>
 	<field name="mxencped_TOTAL" class="java.math.BigDecimal"/>
@@ -127,9 +125,9 @@ WHERE
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="154" splitType="Stretch">
+		<band height="161" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="80" width="572" height="70" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
+				<reportElement x="1" y="80" width="572" height="77" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -142,36 +140,36 @@ WHERE
 				<text><![CDATA[AUTORIDAD DE PASAPORTES EN PANAMÁ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Texto Contenido" x="19" y="81" width="130" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
+				<reportElement style="Texto Contenido" x="19" y="86" width="130" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="131" y="81" width="189" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
+				<reportElement style="Texto Contenido" x="131" y="86" width="189" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
 				<textFieldExpression><![CDATA[$F{mxencped_NUMERO_PEDIDO}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="19" y="97" width="112" height="16" uuid="1880618a-4c92-4fb7-8050-ea84b3e86c9c"/>
+				<reportElement style="Texto Contenido" x="19" y="103" width="112" height="16" uuid="1880618a-4c92-4fb7-8050-ea84b3e86c9c"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="131" y="97" width="189" height="16" uuid="06a2b8f0-a81f-453a-843a-a6a18eb607cd"/>
+				<reportElement style="Texto Contenido" x="131" y="103" width="189" height="16" uuid="06a2b8f0-a81f-453a-843a-a6a18eb607cd"/>
 				<textFieldExpression><![CDATA[$F{mxencped_FECHA}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="356" y="97" width="105" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
+				<reportElement style="Texto Contenido" x="356" y="103" width="105" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[FECHA DE ENTREGA:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="461" y="97" width="104" height="16" uuid="4536ac3e-6852-414c-93b9-31f402752d8b"/>
+				<reportElement style="Texto Contenido" x="461" y="102" width="104" height="16" uuid="4536ac3e-6852-414c-93b9-31f402752d8b"/>
 				<textFieldExpression><![CDATA[$F{mxencped_FECHA_ENTREGA}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -189,26 +187,26 @@ WHERE
 				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Texto Contenido" x="19" y="113" width="131" height="16" uuid="d99eb8fe-30ec-4275-b9df-04445112344a"/>
+				<reportElement style="Texto Contenido" x="19" y="119" width="131" height="16" uuid="d99eb8fe-30ec-4275-b9df-04445112344a"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[DEPARTAMENTO:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="132" y="113" width="433" height="16" uuid="94aa3064-4357-44b8-bb51-4ac3b390247e"/>
+				<reportElement style="Texto Contenido" x="132" y="118" width="433" height="16" uuid="94aa3064-4357-44b8-bb51-4ac3b390247e"/>
 				<textFieldExpression><![CDATA[$F{mxencped_DEPARTAMENTO}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="19" y="129" width="112" height="16" uuid="ef0b4631-18ad-4d2d-b2de-78c5d97b7b51"/>
+				<reportElement style="Texto Contenido" x="19" y="135" width="112" height="16" uuid="ef0b4631-18ad-4d2d-b2de-78c5d97b7b51"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[COMENTARIO:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="132" y="129" width="433" height="16" uuid="390f4770-d383-4be2-9306-8e2959f2980d"/>
-				<textFieldExpression><![CDATA[$F{mxencped_COMENTARIO}]]></textFieldExpression>
+				<reportElement style="Texto Contenido" x="132" y="134" width="433" height="16" uuid="390f4770-d383-4be2-9306-8e2959f2980d"/>
+				<textFieldExpression><![CDATA[$F{mxtrainv_COMENTARIO}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
@@ -262,6 +260,7 @@ WHERE
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement style="Texto Contenido" x="0" y="0" width="62" height="20" uuid="2e1eba47-c3f5-4ce1-9ead-53ff8f9b0b9c"/>
 				<textElement>
+					<font size="9"/>
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mxtrainv_ITEM}]]></textFieldExpression>
@@ -269,6 +268,7 @@ WHERE
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement style="Texto Contenido" x="62" y="0" width="160" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
 				<textElement>
+					<font size="9"/>
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mxctainv_DESCRIPCION}]]></textFieldExpression>
@@ -331,7 +331,7 @@ WHERE
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="136">
+		<band height="153">
 			<rectangle>
 				<reportElement x="450" y="5" width="121" height="60" backcolor="#EFF7FF" uuid="187737c6-4c34-4eb7-bb79-1ac0b9c43734"/>
 			</rectangle>
@@ -345,20 +345,20 @@ WHERE
 				<text><![CDATA[Cantidad de Items:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="93" y="77" width="99" height="20" uuid="ea7b51c4-93da-4f77-8796-863f8b90610f"/>
+				<reportElement x="93" y="86" width="99" height="20" uuid="ea7b51c4-93da-4f77-8796-863f8b90610f"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[ENTREGADO POR:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="388" y="77" width="87" height="20" uuid="8699c427-2737-4b31-9436-7cfe45c3cfa6"/>
+				<reportElement x="388" y="86" width="87" height="20" uuid="8699c427-2737-4b31-9436-7cfe45c3cfa6"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[RECIBIDO POR:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="46" y="119" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
+				<reportElement x="46" y="148" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
 			</line>
 			<line>
-				<reportElement x="329" y="118" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
+				<reportElement x="329" y="148" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
 			</line>
 			<staticText>
 				<reportElement x="450" y="5" width="62" height="20" uuid="8286d314-909e-4343-a38e-14b302ea9e36"/>
