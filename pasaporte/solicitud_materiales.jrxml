@@ -89,6 +89,10 @@ WHERE
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
+			<image>
+				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
+				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
+			</image>
 			<staticText>
 				<reportElement style="Texto Contenido" x="20" y="89" width="122" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
 				<textElement>
