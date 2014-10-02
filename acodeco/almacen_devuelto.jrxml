@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
@@ -122,14 +122,14 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[AUTORIDAD DE PROTECCION AL CONSUMIDOR Y DEFENSA DE LA COMPETENCIA]]></text>
+				<text><![CDATA[AUTORIDAD DE PROTECCIÓN AL CONSUMIDOR Y DEFENSA DE LA COMPETENCIA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Texto Contenido" x="18" y="87" width="113" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
 				<textElement textAlignment="Left">
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[NUMERO DE PEDIDO:]]></text>
+				<text><![CDATA[NÚMERO DE PEDIDO:]]></text>
 			</staticText>
 			<textField>
 				<reportElement style="Texto Contenido" x="130" y="87" width="189" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
@@ -143,7 +143,7 @@ WHERE
 				<textElement textAlignment="Left">
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[FECHA DE DEVOLUCION:]]></text>
+				<text><![CDATA[FECHA DE DEVOLUCIÓN:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement style="Texto Contenido" x="460" y="87" width="103" height="16" uuid="06a2b8f0-a81f-453a-843a-a6a18eb607cd"/>
@@ -164,7 +164,7 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[SECCION DE ALMACEN]]></text>
+				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Texto Contenido" x="18" y="117" width="113" height="16" uuid="d99eb8fe-30ec-4275-b9df-04445112344a"/>
@@ -185,7 +185,7 @@ WHERE
 				<textElement textAlignment="Left">
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[NUMERO DE CASO:]]></text>
+				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
 			<textField>
 				<reportElement style="Texto Contenido" x="130" y="102" width="189" height="16" uuid="c9480b13-dc1f-42bc-9beb-901419f07627"/>
@@ -194,6 +194,10 @@ WHERE
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mxencdev_NUMERO_CASO}]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
+				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
+			</image>
 		</band>
 	</pageHeader>
 	<columnHeader>
