@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="96"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -84,25 +84,25 @@ WHERE
 	<pageHeader>
 		<band height="178" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="83" width="572" height="71" backcolor="#EFF7FF" uuid="ebc21ba2-a095-42c6-bfa3-afc5b8e5c83d"/>
+				<reportElement x="0" y="83" width="572" height="75" backcolor="#EFF7FF" uuid="ebc21ba2-a095-42c6-bfa3-afc5b8e5c83d"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement style="Texto Contenido" x="12" y="89" width="119" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="12" y="89" width="122" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[NUMERO DE CASO:]]></text>
+				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
 			<textField>
 				<reportElement style="Texto Contenido" x="131" y="89" width="100" height="16" uuid="77471f00-c4db-4d30-88bd-ba8ca225df0b"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_APP_NUMBER}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="12" y="105" width="119" height="16" uuid="2a5570e6-0c9d-409e-a929-66c87ab05a5c"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="12" y="105" width="122" height="16" uuid="2a5570e6-0c9d-409e-a929-66c87ab05a5c"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
@@ -112,19 +112,19 @@ WHERE
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_FECHA_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="0" y="121" width="131" height="16" uuid="3653ae76-7622-4f38-bd52-b12a9dc4a0c8"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="12" y="121" width="122" height="16" uuid="3653ae76-7622-4f38-bd52-b12a9dc4a0c8"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[NUMERO DE SOLICITUD:]]></text>
+				<text><![CDATA[NÚMERO DE SOLICITUD:]]></text>
 			</staticText>
 			<textField>
 				<reportElement style="Texto Contenido" x="131" y="121" width="100" height="16" uuid="1427c626-08fd-4972-93b7-1e258c4c007d"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_NUMERO_SOLICITUD}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="243" y="89" width="118" height="16" uuid="40e0f171-d23b-473e-b9ee-bb4e4b2e773b"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="269" y="89" width="92" height="16" uuid="40e0f171-d23b-473e-b9ee-bb4e4b2e773b"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[DEPARTAMENTO:]]></text>
@@ -134,8 +134,8 @@ WHERE
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_AREA_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="243" y="105" width="118" height="16" uuid="d6ff747a-cff9-41f7-8004-de79929f3203"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="269" y="105" width="92" height="16" uuid="d6ff747a-cff9-41f7-8004-de79929f3203"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[SOLICITADO POR:]]></text>
@@ -145,8 +145,8 @@ WHERE
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_NOMBRE_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="243" y="121" width="118" height="16" uuid="bf7097df-ace6-4d91-986e-21d64b22f6cf"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="269" y="121" width="92" height="16" uuid="bf7097df-ace6-4d91-986e-21d64b22f6cf"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[JEFE INMEDIATO:]]></text>
@@ -174,11 +174,11 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[SECCION DE ALMACEN]]></text>
+				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Texto Contenido" x="0" y="137" width="131" height="16" uuid="29ed86c7-ca79-4e72-83e7-c73556c9d2b0"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="12" y="137" width="122" height="16" uuid="29ed86c7-ca79-4e72-83e7-c73556c9d2b0"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[COMENTARIO:]]></text>
@@ -197,7 +197,7 @@ WHERE
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="113" y="2" width="291" height="20" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
-				<text><![CDATA[DESCRIPCION]]></text>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="404" y="2" width="100" height="20" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
