@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="2.0"/>
-	<property name="ireport.x" value="163"/>
-	<property name="ireport.y" value="128"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="32"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -132,7 +132,10 @@ WHERE
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
-			
+			<image>
+				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
+				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
+			</image>
 			<staticText>
 				<reportElement x="0" y="11" width="572" height="16" uuid="034e24c9-95c6-465c-8649-ad6c4f74192f"/>
 				<textElement textAlignment="Center">
@@ -145,7 +148,7 @@ WHERE
 				<textElement textAlignment="Right">
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[NUMERO DE CASO:]]></text>
+				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
 			<textField>
 				<reportElement style="Texto Contenido" x="131" y="81" width="189" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
@@ -196,7 +199,7 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[SECCION DE ALMACEN]]></text>
+				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
@@ -323,7 +326,7 @@ WHERE
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="136">
+		<band height="146">
 			<rectangle>
 				<reportElement x="450" y="5" width="121" height="60" backcolor="#EFF7FF" uuid="187737c6-4c34-4eb7-bb79-1ac0b9c43734"/>
 			</rectangle>
@@ -347,10 +350,10 @@ WHERE
 				<text><![CDATA[RECIBIDO POR:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="46" y="119" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
+				<reportElement x="46" y="137" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
 			</line>
 			<line>
-				<reportElement x="329" y="118" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
+				<reportElement x="329" y="137" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
 			</line>
 			<staticText>
 				<reportElement x="450" y="5" width="62" height="20" uuid="8286d314-909e-4343-a38e-14b302ea9e36"/>
