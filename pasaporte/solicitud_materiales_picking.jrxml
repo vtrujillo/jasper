@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="4.0"/>
-	<property name="ireport.x" value="1021"/>
-	<property name="ireport.y" value="880"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="80"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -81,9 +81,9 @@ WHERE
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="141" splitType="Stretch">
+		<band height="150" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="81" width="572" height="54" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
+				<reportElement x="0" y="81" width="572" height="57" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -219,6 +219,7 @@ WHERE
 			<textField isStretchWithOverflow="true">
 				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="0" y="0" width="71" height="20" uuid="2e1eba47-c3f5-4ce1-9ead-53ff8f9b0b9c"/>
 				<textElement>
+					<font size="9"/>
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS}]]></textFieldExpression>
@@ -226,6 +227,7 @@ WHERE
 			<textField isStretchWithOverflow="true">
 				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="71" y="0" width="200" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
 				<textElement>
+					<font size="9"/>
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS_LABEL}]]></textFieldExpression>
@@ -268,7 +270,7 @@ WHERE
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="89">
+		<band height="107">
 			<textField>
 				<reportElement x="145" y="5" width="29" height="20" uuid="b618ecb7-c2c7-4f07-be11-2bcdb6d2136c"/>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
@@ -279,20 +281,20 @@ WHERE
 				<text><![CDATA[Cantidad de Items:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="94" y="33" width="99" height="20" uuid="ea7b51c4-93da-4f77-8796-863f8b90610f"/>
+				<reportElement x="94" y="39" width="99" height="20" uuid="ea7b51c4-93da-4f77-8796-863f8b90610f"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[PROCESADO POR:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="389" y="33" width="87" height="20" uuid="8699c427-2737-4b31-9436-7cfe45c3cfa6"/>
+				<reportElement x="389" y="39" width="87" height="20" uuid="8699c427-2737-4b31-9436-7cfe45c3cfa6"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[REVISADO POR:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="47" y="75" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
+				<reportElement x="47" y="102" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
 			</line>
 			<line>
-				<reportElement x="330" y="75" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
+				<reportElement x="330" y="102" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
 			</line>
 		</band>
 	</summary>
