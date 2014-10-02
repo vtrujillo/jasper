@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="235"/>
-	<property name="ireport.y" value="214"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -88,6 +88,10 @@ WHERE
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
+			<image>
+				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
+				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
+			</image>
 			<staticText>
 				<reportElement style="Texto Contenido" x="19" y="87" width="123" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
 				<textElement>
@@ -159,7 +163,7 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[LOTERIA NACIONAL DE BENEFICENCIA]]></text>
+				<text><![CDATA[LOTERÍA NACIONAL DE BENEFICENCIA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="0" y="65" width="572" height="16" backcolor="#99CCFF" uuid="bbc9e433-b37d-46ed-83ec-d37b09bb56db"/>
