@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="235"/>
+	<property name="ireport.y" value="214"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -81,7 +81,7 @@ WHERE
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="145" splitType="Stretch">
+		<band height="147" splitType="Stretch">
 			<rectangle>
 				<reportElement x="0" y="81" width="572" height="58" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
 				<graphicElement>
@@ -89,41 +89,41 @@ WHERE
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement style="Texto Contenido" x="1" y="87" width="130" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="19" y="87" width="123" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="131" y="87" width="100" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
+				<reportElement style="Texto Contenido" x="142" y="87" width="100" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_APP_NUMBER}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="0" y="103" width="131" height="16" uuid="1880618a-4c92-4fb7-8050-ea84b3e86c9c"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="19" y="103" width="123" height="16" uuid="1880618a-4c92-4fb7-8050-ea84b3e86c9c"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="131" y="103" width="100" height="16" uuid="06a2b8f0-a81f-453a-843a-a6a18eb607cd"/>
+				<reportElement style="Texto Contenido" x="142" y="103" width="100" height="16" uuid="06a2b8f0-a81f-453a-843a-a6a18eb607cd"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_FECHA_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="1" y="119" width="130" height="16" uuid="eb27367d-41ca-450d-bd63-eff833588723"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="19" y="119" width="123" height="16" uuid="eb27367d-41ca-450d-bd63-eff833588723"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[NÚMERO DE SOLICITUD:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="131" y="119" width="100" height="16" uuid="e025322d-5aa0-4b15-bec9-f5c2dcf44578"/>
+				<reportElement style="Texto Contenido" x="142" y="119" width="100" height="16" uuid="e025322d-5aa0-4b15-bec9-f5c2dcf44578"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_NUMERO_SOLICITUD}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="247" y="87" width="114" height="16" uuid="c3e22acb-286a-4188-a7c9-aefa336c5dca"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="269" y="87" width="92" height="16" uuid="c3e22acb-286a-4188-a7c9-aefa336c5dca"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[DEPARTAMENTO:]]></text>
@@ -133,8 +133,8 @@ WHERE
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_AREA_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="247" y="103" width="114" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="269" y="103" width="92" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[SOLICITADO POR:]]></text>
@@ -144,8 +144,8 @@ WHERE
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_NOMBRE_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="247" y="119" width="114" height="16" uuid="b77af9df-719b-46c3-9194-bef30602fd23"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="269" y="119" width="92" height="16" uuid="b77af9df-719b-46c3-9194-bef30602fd23"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[JEFE INMEDIATO:]]></text>
@@ -268,7 +268,7 @@ WHERE
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="89">
+		<band height="107">
 			<textField>
 				<reportElement x="145" y="5" width="29" height="20" uuid="b618ecb7-c2c7-4f07-be11-2bcdb6d2136c"/>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
@@ -289,10 +289,10 @@ WHERE
 				<text><![CDATA[REVISADO POR:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="47" y="75" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
+				<reportElement x="47" y="102" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
 			</line>
 			<line>
-				<reportElement x="330" y="75" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
+				<reportElement x="330" y="102" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
 			</line>
 		</band>
 	</summary>
