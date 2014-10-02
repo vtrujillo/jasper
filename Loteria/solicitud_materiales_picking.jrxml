@@ -81,9 +81,9 @@ WHERE
 		<band splitType="Stretch"/>
 	</background>
 	<pageHeader>
-		<band height="141" splitType="Stretch">
+		<band height="145" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="81" width="572" height="54" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
+				<reportElement x="0" y="81" width="572" height="58" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
@@ -93,7 +93,7 @@ WHERE
 				<textElement textAlignment="Right">
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[NUMERO DE CASO:]]></text>
+				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
 			<textField>
 				<reportElement style="Texto Contenido" x="131" y="87" width="100" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
@@ -115,7 +115,7 @@ WHERE
 				<textElement textAlignment="Right">
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[NUMERO DE SOLICITUD:]]></text>
+				<text><![CDATA[NÚMERO DE SOLICITUD:]]></text>
 			</staticText>
 			<textField>
 				<reportElement style="Texto Contenido" x="131" y="119" width="100" height="16" uuid="e025322d-5aa0-4b15-bec9-f5c2dcf44578"/>
@@ -154,10 +154,6 @@ WHERE
 				<reportElement style="Texto Contenido" x="361" y="119" width="211" height="16" uuid="bba46120-8b74-465f-8e83-d6978698ed58"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FAS_SUPER}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="7" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
-				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="0" y="12" width="572" height="16" uuid="034e24c9-95c6-465c-8649-ad6c4f74192f"/>
 				<textElement textAlignment="Center">
@@ -177,7 +173,7 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[SECCION DE ALMACEN]]></text>
+				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
