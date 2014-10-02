@@ -89,6 +89,10 @@ WHERE
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
+			<image>
+				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
+				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
+			</image>
 			<staticText>
 				<reportElement style="Texto Contenido" x="12" y="89" width="122" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
 				<textElement>
@@ -160,7 +164,7 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[LOTERIA NACIONAL DE BENEFICENCIA]]></text>
+				<text><![CDATA[LOTERÍA NACIONAL DE BENEFICENCIA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="0" y="67" width="572" height="16" backcolor="#99CCFF" uuid="46837b12-e5b9-4cf9-963e-f0722d25c48a"/>
