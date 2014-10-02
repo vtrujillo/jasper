@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="140"/>
+	<property name="ireport.y" value="576"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -90,69 +90,69 @@ WHERE
 				</graphicElement>
 			</rectangle>
 			<staticText>
-				<reportElement style="Texto Contenido" x="12" y="89" width="119" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="20" y="89" width="122" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[NUMERO DE CASO:]]></text>
+				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="131" y="89" width="100" height="16" uuid="77471f00-c4db-4d30-88bd-ba8ca225df0b"/>
+				<reportElement style="Texto Contenido" x="142" y="89" width="100" height="16" uuid="77471f00-c4db-4d30-88bd-ba8ca225df0b"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_APP_NUMBER}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="12" y="105" width="119" height="16" uuid="2a5570e6-0c9d-409e-a929-66c87ab05a5c"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="20" y="105" width="122" height="16" uuid="2a5570e6-0c9d-409e-a929-66c87ab05a5c"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="131" y="105" width="100" height="16" uuid="8d88ffa6-8d28-422d-a42a-d85b15cf9ac8"/>
+				<reportElement style="Texto Contenido" x="142" y="105" width="100" height="16" uuid="8d88ffa6-8d28-422d-a42a-d85b15cf9ac8"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_FECHA_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="0" y="121" width="131" height="16" uuid="3653ae76-7622-4f38-bd52-b12a9dc4a0c8"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="20" y="121" width="122" height="16" uuid="3653ae76-7622-4f38-bd52-b12a9dc4a0c8"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<text><![CDATA[NUMERO DE SOLICITUD:]]></text>
+				<text><![CDATA[NÚMERO DE SOLICITUD:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="131" y="121" width="100" height="16" uuid="1427c626-08fd-4972-93b7-1e258c4c007d"/>
+				<reportElement style="Texto Contenido" x="142" y="121" width="100" height="16" uuid="1427c626-08fd-4972-93b7-1e258c4c007d"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_NUMERO_SOLICITUD}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="243" y="89" width="118" height="16" uuid="40e0f171-d23b-473e-b9ee-bb4e4b2e773b"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="281" y="89" width="91" height="16" uuid="40e0f171-d23b-473e-b9ee-bb4e4b2e773b"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[DEPARTAMENTO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="361" y="89" width="211" height="16" uuid="dac94d6e-3719-44e9-a407-6cb5e84b864c"/>
+				<reportElement style="Texto Contenido" x="372" y="89" width="177" height="16" uuid="dac94d6e-3719-44e9-a407-6cb5e84b864c"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_AREA_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="243" y="105" width="118" height="16" uuid="d6ff747a-cff9-41f7-8004-de79929f3203"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="281" y="105" width="91" height="16" uuid="d6ff747a-cff9-41f7-8004-de79929f3203"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[SOLICITADO POR:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="361" y="105" width="211" height="16" uuid="4bc80224-b11e-46dc-8803-36fa45419902"/>
+				<reportElement style="Texto Contenido" x="372" y="105" width="177" height="16" uuid="4bc80224-b11e-46dc-8803-36fa45419902"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_NOMBRE_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="243" y="121" width="118" height="16" uuid="bf7097df-ace6-4d91-986e-21d64b22f6cf"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="281" y="121" width="91" height="16" uuid="bf7097df-ace6-4d91-986e-21d64b22f6cf"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[JEFE INMEDIATO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="361" y="121" width="211" height="16" uuid="becf2933-0b09-431c-8cba-a5407290a28c"/>
+				<reportElement style="Texto Contenido" x="372" y="121" width="177" height="16" uuid="becf2933-0b09-431c-8cba-a5407290a28c"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FAS_SUPER}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -160,7 +160,7 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[LOTERIA NACIONAL DE BENEFICENCIA]]></text>
+				<text><![CDATA[AUTORIDAD DE PASAPORTES EN PANAMÁ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="0" y="67" width="572" height="16" backcolor="#99CCFF" uuid="46837b12-e5b9-4cf9-963e-f0722d25c48a"/>
@@ -174,17 +174,17 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[SECCION DE ALMACEN]]></text>
+				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Texto Contenido" x="0" y="137" width="131" height="16" uuid="29ed86c7-ca79-4e72-83e7-c73556c9d2b0"/>
-				<textElement textAlignment="Right">
+				<reportElement style="Texto Contenido" x="20" y="137" width="122" height="16" uuid="29ed86c7-ca79-4e72-83e7-c73556c9d2b0"/>
+				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[COMENTARIO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="131" y="137" width="441" height="16" uuid="723020dd-f754-4ff0-a55d-afea2870a47f"/>
+				<reportElement style="Texto Contenido" x="142" y="137" width="407" height="16" uuid="723020dd-f754-4ff0-a55d-afea2870a47f"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_COMENTARIOS_SOLICITUD}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -197,7 +197,7 @@ WHERE
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="113" y="2" width="291" height="20" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
-				<text><![CDATA[DESCRIPCION]]></text>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="404" y="2" width="100" height="20" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>

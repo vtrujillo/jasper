@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="512"/>
+	<property name="ireport.y" value="48"/>
+	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
+	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
+		<box>
+			<pen lineWidth="0.5"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="zebra" mode="Opaque" backcolor="#FFFFFF" vAlign="Middle">
+		<pen lineStyle="Double"/>
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[java.lang.Boolean.valueOf($V{REPORT_COUNT}%2 == 0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="PEDIDO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[209]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     mxtrainv.`ITEM` AS mxtrainv_ITEM,
+     mxtrainv.`FECHA` AS mxtrainv_FECHA,
+     mxtrainv.`TIPOMOV` AS mxtrainv_TIPOMOV,
+     mxtrainv.`UNIDAD` AS mxtrainv_UNIDAD,
+     mxtrainv.`CANTIDAD` AS mxtrainv_CANTIDAD,
+     mxtrainv.`COSTO` AS mxtrainv_COSTO,
+     mxtrainv.`COSTO_TOT` AS mxtrainv_COSTO_TOT,
+     mxtrainv.`NUMDOC` AS mxtrainv_NUMDOC,
+     mxtrainv.`FACTURA` AS mxtrainv_FACTURA,
+     mxtrainv.`DEPARTAMENTO` AS mxtrainv_DEPARTAMENTO,
+     mxtrainv.`ORIGEN` AS mxtrainv_ORIGEN,
+     mxtrainv.`ORDEN_COMPRA` AS mxtrainv_ORDEN_COMPRA,
+     mxtrainv.`DISPONIBLE` AS mxtrainv_DISPONIBLE,
+     mxtrainv.`COMENTARIO` AS mxtrainv_COMENTARIO,
+     mxtrainv.`SOLICITADO` AS mxtrainv_SOLICITADO,
+     mxencped.`FECHA` AS mxencped_FECHA,
+     mxencped.`NUMERO_PEDIDO` AS mxencped_NUMERO_PEDIDO,
+     mxencped.`DEPARTAMENTO` AS mxencped_DEPARTAMENTO,
+     mxencped.`FECHA_ENTREGA` AS mxencped_FECHA_ENTREGA,
+     mxencped.`COMENTARIO` AS mxencped_COMENTARIO,
+     mxencped.`SUB_TOTAL` AS mxencped_SUB_TOTAL,
+     mxencped.`ITBM` AS mxencped_ITBM,
+     mxencped.`TOTAL` AS mxencped_TOTAL,
+     mxctainv.`ITEM` AS mxctainv_ITEM,
+     mxctainv.`DESCRIPCION` AS mxctainv_DESCRIPCION,
+     mxctainv.`CATEGORIA` AS mxctainv_CATEGORIA,
+     mxctainv.`EXMIN` AS mxctainv_EXMIN,
+     mxctainv.`UNIDAD` AS mxctainv_UNIDAD,
+     mxctainv.`COD_PROVEE` AS mxctainv_COD_PROVEE,
+     mxctainv.`ULT_COSTO` AS mxctainv_ULT_COSTO,
+     mxctainv.`COSTO_ACT` AS mxctainv_COSTO_ACT,
+     mxctainv.`EXISTE_ACT` AS mxctainv_EXISTE_ACT,
+     mxctainv.`ACU_ENT` AS mxctainv_ACU_ENT,
+     mxctainv.`ACU_COS` AS mxctainv_ACU_COS,
+     mxctainv.`FECHA_CREACION` AS mxctainv_FECHA_CREACION,
+     mxctainv.`COSTO_ANT` AS mxctainv_COSTO_ANT,
+     mxctainv.`ESTATUS` AS mxctainv_ESTATUS,
+     mxctainv.`CTA_CONTABLE` AS mxctainv_CTA_CONTABLE,
+     mxctainv.`CLASIFICACION` AS mxctainv_CLASIFICACION,
+     mxctainv.`UBICACION_FISICA` AS mxctainv_UBICACION_FISICA,
+     mxctainv.`ITBM` AS mxctainv_ITBM
+FROM
+     `mxencped` mxencped INNER JOIN `mxtrainv` mxtrainv ON mxencped.`NUMERO_PEDIDO` = mxtrainv.`NUMDOC`
+     INNER JOIN `mxctainv` mxctainv ON mxtrainv.`ITEM` = mxctainv.`ITEM`
+WHERE
+    mxencped.`NUMERO_PEDIDO` = $P{PEDIDO} AND mxtrainv.`TIPOMOV` = 'SA']]>
+	</queryString>
+	<field name="mxtrainv_ITEM" class="java.lang.String"/>
+	<field name="mxtrainv_FECHA" class="java.sql.Timestamp"/>
+	<field name="mxtrainv_TIPOMOV" class="java.lang.String"/>
+	<field name="mxtrainv_UNIDAD" class="java.lang.String"/>
+	<field name="mxtrainv_CANTIDAD" class="java.lang.Integer"/>
+	<field name="mxtrainv_COSTO" class="java.math.BigDecimal"/>
+	<field name="mxtrainv_COSTO_TOT" class="java.math.BigDecimal"/>
+	<field name="mxtrainv_NUMDOC" class="java.lang.String"/>
+	<field name="mxtrainv_FACTURA" class="java.lang.String"/>
+	<field name="mxtrainv_DEPARTAMENTO" class="java.lang.String"/>
+	<field name="mxtrainv_ORIGEN" class="java.lang.String"/>
+	<field name="mxtrainv_ORDEN_COMPRA" class="java.lang.String"/>
+	<field name="mxtrainv_DISPONIBLE" class="java.lang.Integer"/>
+	<field name="mxtrainv_COMENTARIO" class="java.lang.String"/>
+	<field name="mxtrainv_SOLICITADO" class="java.lang.Integer"/>
+	<field name="mxencped_FECHA" class="java.sql.Date"/>
+	<field name="mxencped_NUMERO_PEDIDO" class="java.lang.Integer"/>
+	<field name="mxencped_DEPARTAMENTO" class="java.lang.String"/>
+	<field name="mxencped_FECHA_ENTREGA" class="java.sql.Date"/>
+	<field name="mxencped_COMENTARIO" class="java.lang.String"/>
+	<field name="mxencped_SUB_TOTAL" class="java.math.BigDecimal"/>
+	<field name="mxencped_ITBM" class="java.math.BigDecimal"/>
+	<field name="mxencped_TOTAL" class="java.math.BigDecimal"/>
+	<field name="mxctainv_ITEM" class="java.lang.String"/>
+	<field name="mxctainv_DESCRIPCION" class="java.lang.String"/>
+	<field name="mxctainv_CATEGORIA" class="java.lang.String"/>
+	<field name="mxctainv_EXMIN" class="java.lang.Integer"/>
+	<field name="mxctainv_UNIDAD" class="java.lang.String"/>
+	<field name="mxctainv_COD_PROVEE" class="java.lang.Integer"/>
+	<field name="mxctainv_ULT_COSTO" class="java.math.BigDecimal"/>
+	<field name="mxctainv_COSTO_ACT" class="java.math.BigDecimal"/>
+	<field name="mxctainv_EXISTE_ACT" class="java.lang.Integer"/>
+	<field name="mxctainv_ACU_ENT" class="java.lang.Integer"/>
+	<field name="mxctainv_ACU_COS" class="java.math.BigDecimal"/>
+	<field name="mxctainv_FECHA_CREACION" class="java.sql.Date"/>
+	<field name="mxctainv_COSTO_ANT" class="java.math.BigDecimal"/>
+	<field name="mxctainv_ESTATUS" class="java.lang.Object"/>
+	<field name="mxctainv_CTA_CONTABLE" class="java.lang.String"/>
+	<field name="mxctainv_CLASIFICACION" class="java.lang.Integer"/>
+	<field name="mxctainv_UBICACION_FISICA" class="java.lang.String"/>
+	<field name="mxctainv_ITBM" class="java.math.BigDecimal"/>
+	<variable name="subtotal" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{mxtrainv_COSTO_TOT}]]></variableExpression>
+	</variable>
+	<variable name="itbms" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{mxctainv_ITBM}.doubleValue()*$F{mxtrainv_COSTO_TOT}.doubleValue()/100]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="154" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="80" width="572" height="70" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="11" width="572" height="16" uuid="034e24c9-95c6-465c-8649-ad6c4f74192f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORIDAD DE PASAPORTES EN PANAMÁ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Texto Contenido" x="19" y="81" width="130" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
+				<textElement>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[NÚMERO DE CASO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Texto Contenido" x="131" y="81" width="189" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
+				<textFieldExpression><![CDATA[$F{mxencped_NUMERO_PEDIDO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="19" y="97" width="112" height="16" uuid="1880618a-4c92-4fb7-8050-ea84b3e86c9c"/>
+				<textElement>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Texto Contenido" x="131" y="97" width="189" height="16" uuid="06a2b8f0-a81f-453a-843a-a6a18eb607cd"/>
+				<textFieldExpression><![CDATA[$F{mxencped_FECHA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="356" y="97" width="105" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
+				<textElement>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[FECHA DE ENTREGA:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Texto Contenido" x="461" y="97" width="104" height="16" uuid="4536ac3e-6852-414c-93b9-31f402752d8b"/>
+				<textFieldExpression><![CDATA[$F{mxencped_FECHA_ENTREGA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="0" y="64" width="572" height="16" backcolor="#99CCFF" uuid="bbc9e433-b37d-46ed-83ec-d37b09bb56db"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENTREGA DE MATERIALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="27" width="572" height="16" uuid="a7c07133-9d37-465e-9bc3-bbe6419f5af0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Texto Contenido" x="19" y="113" width="131" height="16" uuid="d99eb8fe-30ec-4275-b9df-04445112344a"/>
+				<textElement>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Texto Contenido" x="132" y="113" width="433" height="16" uuid="94aa3064-4357-44b8-bb51-4ac3b390247e"/>
+				<textFieldExpression><![CDATA[$F{mxencped_DEPARTAMENTO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="19" y="129" width="112" height="16" uuid="ef0b4631-18ad-4d2d-b2de-78c5d97b7b51"/>
+				<textElement>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[COMENTARIO:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Texto Contenido" x="132" y="129" width="433" height="16" uuid="390f4770-d383-4be2-9306-8e2959f2980d"/>
+				<textFieldExpression><![CDATA[$F{mxencped_COMENTARIO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="0" y="6" width="62" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="e840b092-8315-48e4-93eb-fd756538ce70"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="62" y="6" width="160" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="222" y="6" width="54" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[Unidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="276" y="6" width="57" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
+				<text><![CDATA[Solicitado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="333" y="6" width="61" height="20" backcolor="#99CCFF" uuid="d1fdff1a-efe7-41db-96e3-451e475284e7"/>
+				<text><![CDATA[Entregado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="394" y="6" width="60" height="20" backcolor="#99CCFF" uuid="bf371d82-d446-4898-a6c5-60e64b7a7c21"/>
+				<text><![CDATA[O/C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="454" y="6" width="54" height="20" backcolor="#99CCFF" uuid="2debdda4-8de0-4979-a03c-08ff73ade19e"/>
+				<text><![CDATA[Costo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="508" y="6" width="64" height="20" backcolor="#99CCFF" uuid="7d8a41b1-fada-49b9-828a-eae36101db64"/>
+				<text><![CDATA[Costo Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="0" y="0" width="62" height="20" uuid="2e1eba47-c3f5-4ce1-9ead-53ff8f9b0b9c"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxtrainv_ITEM}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="62" y="0" width="160" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxctainv_DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="222" y="0" width="54" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxtrainv_UNIDAD}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="276" y="0" width="57" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mxtrainv_SOLICITADO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="333" y="0" width="61" height="20" uuid="5f85dc73-3439-4fe9-96b3-79e63bb0f226"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{mxtrainv_CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="394" y="0" width="60" height="20" uuid="9f201d6b-71c8-4637-b6ed-1ebb05e0076e"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxtrainv_ORDEN_COMPRA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="454" y="0" width="54" height="20" uuid="c536c31a-dac0-47ac-b039-6ccc9217713c"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxtrainv_COSTO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="508" y="0" width="64" height="20" uuid="baf142db-fbbf-46c7-bb7f-82ee4b2b3eb9"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxtrainv_COSTO_TOT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="10" width="80" height="20" uuid="b7d4b0ba-b231-4f87-b33f-3580213095e9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["PAGINA "+$V{PAGE_NUMBER}+" DE"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="531" y="10" width="40" height="20" uuid="9ccea06e-801a-411f-9928-da9f2e068d17"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="10" width="100" height="20" uuid="22a14afd-3087-450f-897d-e8b32cee3b22"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="136">
+			<rectangle>
+				<reportElement x="450" y="5" width="121" height="60" backcolor="#EFF7FF" uuid="187737c6-4c34-4eb7-bb79-1ac0b9c43734"/>
+			</rectangle>
+			<textField>
+				<reportElement x="102" y="5" width="29" height="20" uuid="b618ecb7-c2c7-4f07-be11-2bcdb6d2136c"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="5" width="99" height="20" uuid="244b4d36-4522-4862-9715-4e130f5b173d"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Cantidad de Items:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="77" width="99" height="20" uuid="ea7b51c4-93da-4f77-8796-863f8b90610f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ENTREGADO POR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="77" width="87" height="20" uuid="8699c427-2737-4b31-9436-7cfe45c3cfa6"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[RECIBIDO POR:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="46" y="119" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
+			</line>
+			<line>
+				<reportElement x="329" y="118" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
+			</line>
+			<staticText>
+				<reportElement x="450" y="5" width="62" height="20" uuid="8286d314-909e-4343-a38e-14b302ea9e36"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Sub Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="25" width="62" height="20" uuid="57dacc44-7bf1-4802-89ca-b285729c510b"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[ITBMS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="45" width="62" height="20" uuid="92978582-4109-4e48-b016-0a40a7039598"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="512" y="5" width="60" height="20" uuid="92ab1f4b-277f-451c-a1b1-ba33de7e070e"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,##0.00").format($V{subtotal})]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="512" y="25" width="59" height="20" uuid="df09a19a-86d9-44f2-a81e-8358ec026165"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{itbms}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="512" y="45" width="59" height="20" uuid="42a6e527-8057-418a-a4f4-931b9bc31480"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{itbms}.doubleValue()+$V{subtotal}.doubleValue()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
