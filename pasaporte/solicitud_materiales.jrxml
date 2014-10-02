@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="4.0"/>
-	<property name="ireport.x" value="140"/>
-	<property name="ireport.y" value="576"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -218,6 +218,7 @@ WHERE
 			<textField>
 				<reportElement x="27" y="0" width="86" height="20" uuid="2e1eba47-c3f5-4ce1-9ead-53ff8f9b0b9c"/>
 				<textElement>
+					<font size="9"/>
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS}]]></textFieldExpression>
@@ -225,6 +226,7 @@ WHERE
 			<textField>
 				<reportElement x="113" y="0" width="291" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
 				<textElement>
+					<font size="9"/>
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS_LABEL}]]></textFieldExpression>
@@ -241,7 +243,9 @@ WHERE
 			</textField>
 			<textField>
 				<reportElement x="0" y="0" width="27" height="20" uuid="d2b9903b-b140-4d07-8e05-a0dad55fee44"/>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
 		</band>
