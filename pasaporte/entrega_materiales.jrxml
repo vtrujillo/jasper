@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="1833"/>
+	<property name="ireport.y" value="1034"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -127,14 +127,14 @@ WHERE
 	<pageHeader>
 		<band height="161" splitType="Stretch">
 			<rectangle>
-				<reportElement x="1" y="80" width="572" height="77" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
+				<reportElement x="0" y="80" width="572" height="77" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
 				<graphicElement>
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
 			<image>
 				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
-				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
+				<imageExpression><![CDATA["repo:logo_pasaporte.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="0" y="11" width="572" height="16" uuid="034e24c9-95c6-465c-8649-ad6c4f74192f"/>
@@ -166,14 +166,14 @@ WHERE
 				<textFieldExpression><![CDATA[$F{mxencped_FECHA}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="356" y="103" width="105" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
+				<reportElement style="Texto Contenido" x="343" y="103" width="111" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[FECHA DE ENTREGA:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="461" y="102" width="104" height="16" uuid="4536ac3e-6852-414c-93b9-31f402752d8b"/>
+				<reportElement style="Texto Contenido" x="454" y="103" width="111" height="16" uuid="4536ac3e-6852-414c-93b9-31f402752d8b"/>
 				<textFieldExpression><![CDATA[$F{mxencped_FECHA_ENTREGA}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -337,7 +337,7 @@ WHERE
 	<summary>
 		<band height="153">
 			<rectangle>
-				<reportElement x="450" y="5" width="121" height="60" backcolor="#EFF7FF" uuid="187737c6-4c34-4eb7-bb79-1ac0b9c43734"/>
+				<reportElement x="451" y="5" width="121" height="60" backcolor="#EFF7FF" uuid="187737c6-4c34-4eb7-bb79-1ac0b9c43734"/>
 			</rectangle>
 			<textField>
 				<reportElement x="102" y="5" width="29" height="20" uuid="b618ecb7-c2c7-4f07-be11-2bcdb6d2136c"/>
@@ -380,7 +380,7 @@ WHERE
 				<text><![CDATA[Total:]]></text>
 			</staticText>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement x="512" y="5" width="60" height="20" uuid="92ab1f4b-277f-451c-a1b1-ba33de7e070e"/>
+				<reportElement x="512" y="5" width="59" height="20" uuid="92ab1f4b-277f-451c-a1b1-ba33de7e070e"/>
 				<textElement textAlignment="Right">
 					<paragraph rightIndent="3"/>
 				</textElement>

@@ -24,7 +24,7 @@
 			<style backcolor="#EFF7FF"/>
 		</conditionalStyle>
 	</style>
-	<parameter name="PEDIDO" class="java.lang.String">
+	<parameter name="NUM_PEDIDO" class="java.lang.String">
 		<defaultValueExpression><![CDATA[209]]></defaultValueExpression>
 	</parameter>
 	<parameter name="ANIO" class="java.lang.String"/>
@@ -77,7 +77,7 @@ FROM
      `mxencped` mxencped INNER JOIN `mxtrainv` mxtrainv ON mxencped.`NUMERO_PEDIDO` = mxtrainv.`NUMDOC` and mxencped.`ANIO` = mxtrainv.`ANIO`
      INNER JOIN `mxctainv` mxctainv ON mxtrainv.`ITEM` = mxctainv.`ITEM`
 WHERE
-    mxencped.`NUMERO_PEDIDO` = $P{PEDIDO} AND mxtrainv.`TIPOMOV` = 'SA' AND mxencped.`ANIO` = $P{ANIO}]]>
+    mxencped.`NUMERO_PEDIDO` = $P{NUM_PEDIDO} AND mxtrainv.`TIPOMOV` = 'SA' AND mxencped.`ANIO` = $P{ANIO}]]>
 	</queryString>
 	<field name="mxtrainv_ITEM" class="java.lang.String"/>
 	<field name="mxtrainv_FECHA" class="java.sql.Timestamp"/>
@@ -139,6 +139,10 @@ WHERE
 					<pen lineWidth="0.5"/>
 				</graphicElement>
 			</rectangle>
+            <image>
+				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
+				<imageExpression><![CDATA["repo:logo_acodeco.png"]]></imageExpression>
+			</image>
 			<staticText>
 				<reportElement x="48" y="11" width="512" height="16" uuid="034e24c9-95c6-465c-8649-ad6c4f74192f"/>
 				<textElement textAlignment="Center">
@@ -230,10 +234,6 @@ WHERE
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mxencped_NUMERO_CASO}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
-				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
-			</image>
 		</band>
 	</pageHeader>
 	<columnHeader>
