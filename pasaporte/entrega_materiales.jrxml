@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="4.0"/>
-	<property name="ireport.x" value="1833"/>
-	<property name="ireport.y" value="1034"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="250"/>
+	<property name="ireport.y" value="77"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -141,39 +141,28 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[AUTORIDAD DE PASAPORTES EN PANAMÁ]]></text>
+				<text><![CDATA[AUTORIDAD DE PASAPORTES DE PANAMÁ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Texto Contenido" x="19" y="86" width="130" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
+				<reportElement style="Texto Contenido" x="19" y="93" width="97" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
 				<textElement>
-					<paragraph rightIndent="5"/>
+					<paragraph rightIndent="1"/>
 				</textElement>
 				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="131" y="86" width="189" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
+				<reportElement style="Texto Contenido" x="116" y="93" width="170" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
 				<textFieldExpression><![CDATA[$F{mxencped_NUMERO_PEDIDO}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="19" y="103" width="112" height="16" uuid="1880618a-4c92-4fb7-8050-ea84b3e86c9c"/>
-				<textElement>
-					<paragraph rightIndent="5"/>
-				</textElement>
-				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
-			</staticText>
-			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="131" y="103" width="189" height="16" uuid="06a2b8f0-a81f-453a-843a-a6a18eb607cd"/>
-				<textFieldExpression><![CDATA[$F{mxencped_FECHA}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement style="Texto Contenido" x="343" y="103" width="111" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
+				<reportElement style="Texto Contenido" x="341" y="93" width="111" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[FECHA DE ENTREGA:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="454" y="103" width="111" height="16" uuid="4536ac3e-6852-414c-93b9-31f402752d8b"/>
+				<reportElement style="Texto Contenido" x="454" y="93" width="111" height="16" uuid="4536ac3e-6852-414c-93b9-31f402752d8b"/>
 				<textFieldExpression><![CDATA[$F{mxencped_FECHA_ENTREGA}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -191,25 +180,25 @@ WHERE
 				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Texto Contenido" x="19" y="119" width="131" height="16" uuid="d99eb8fe-30ec-4275-b9df-04445112344a"/>
+				<reportElement style="Texto Contenido" x="19" y="110" width="97" height="16" uuid="d99eb8fe-30ec-4275-b9df-04445112344a"/>
 				<textElement>
-					<paragraph rightIndent="5"/>
+					<paragraph rightIndent="1"/>
 				</textElement>
 				<text><![CDATA[DEPARTAMENTO:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="132" y="118" width="433" height="16" uuid="94aa3064-4357-44b8-bb51-4ac3b390247e"/>
+				<reportElement style="Texto Contenido" x="116" y="110" width="449" height="16" uuid="94aa3064-4357-44b8-bb51-4ac3b390247e"/>
 				<textFieldExpression><![CDATA[$F{mxencped_DEPARTAMENTO}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="19" y="135" width="112" height="16" uuid="ef0b4631-18ad-4d2d-b2de-78c5d97b7b51"/>
+				<reportElement style="Texto Contenido" x="19" y="127" width="97" height="16" uuid="ef0b4631-18ad-4d2d-b2de-78c5d97b7b51"/>
 				<textElement>
-					<paragraph rightIndent="5"/>
+					<paragraph rightIndent="1"/>
 				</textElement>
 				<text><![CDATA[COMENTARIO:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="132" y="134" width="433" height="16" uuid="390f4770-d383-4be2-9306-8e2959f2980d"/>
+				<reportElement style="Texto Contenido" x="116" y="127" width="449" height="16" uuid="390f4770-d383-4be2-9306-8e2959f2980d"/>
 				<textFieldExpression><![CDATA[$F{mxtrainv_COMENTARIO}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -219,35 +208,31 @@ WHERE
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="0" y="6" width="62" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="e840b092-8315-48e4-93eb-fd756538ce70"/>
 				<textElement textAlignment="Left">
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="4"/>
 				</textElement>
 				<text><![CDATA[Item]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="62" y="6" width="160" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="62" y="6" width="220" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
 				<textElement textAlignment="Left">
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="4"/>
 				</textElement>
 				<text><![CDATA[Descripción]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="222" y="6" width="54" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="282" y="6" width="54" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
 				<textElement textAlignment="Left">
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<text><![CDATA[Unidad]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="276" y="6" width="57" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="336" y="6" width="57" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
 				<text><![CDATA[Solicitado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="333" y="6" width="61" height="20" backcolor="#99CCFF" uuid="d1fdff1a-efe7-41db-96e3-451e475284e7"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="393" y="6" width="61" height="20" backcolor="#99CCFF" uuid="d1fdff1a-efe7-41db-96e3-451e475284e7"/>
 				<text><![CDATA[Entregado]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="394" y="6" width="60" height="20" backcolor="#99CCFF" uuid="bf371d82-d446-4898-a6c5-60e64b7a7c21"/>
-				<text><![CDATA[O/C]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="454" y="6" width="54" height="20" backcolor="#99CCFF" uuid="2debdda4-8de0-4979-a03c-08ff73ade19e"/>
@@ -265,41 +250,34 @@ WHERE
 				<reportElement style="Texto Contenido" x="0" y="0" width="62" height="20" uuid="2e1eba47-c3f5-4ce1-9ead-53ff8f9b0b9c"/>
 				<textElement>
 					<font size="9"/>
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="4"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mxtrainv_ITEM}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Texto Contenido" x="62" y="0" width="160" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
+				<reportElement style="Texto Contenido" x="62" y="0" width="220" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
 				<textElement>
 					<font size="9"/>
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="4"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mxctainv_DESCRIPCION}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Texto Contenido" x="222" y="0" width="54" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
+				<reportElement style="Texto Contenido" x="282" y="0" width="54" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
 				<textElement textAlignment="Left">
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mxtrainv_UNIDAD}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Texto Contenido" x="276" y="0" width="57" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
+				<reportElement style="Texto Contenido" x="336" y="0" width="57" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{mxtrainv_SOLICITADO}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement style="Texto Contenido" x="333" y="0" width="61" height="20" uuid="5f85dc73-3439-4fe9-96b3-79e63bb0f226"/>
+				<reportElement style="Texto Contenido" x="393" y="0" width="61" height="20" uuid="5f85dc73-3439-4fe9-96b3-79e63bb0f226"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{mxtrainv_CANTIDAD}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement style="Texto Contenido" x="394" y="0" width="60" height="20" uuid="9f201d6b-71c8-4637-b6ed-1ebb05e0076e"/>
-				<textElement>
-					<paragraph leftIndent="3"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{mxtrainv_ORDEN_COMPRA}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement style="Texto Contenido" x="454" y="0" width="54" height="20" uuid="c536c31a-dac0-47ac-b039-6ccc9217713c"/>

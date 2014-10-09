@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="75"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -95,7 +95,7 @@ WHERE
 			<staticText>
 				<reportElement style="Texto Contenido" x="28" y="87" width="122" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
 				<textElement>
-					<paragraph rightIndent="5"/>
+					<paragraph rightIndent="3"/>
 				</textElement>
 				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
@@ -106,7 +106,7 @@ WHERE
 			<staticText>
 				<reportElement style="Texto Contenido" x="28" y="103" width="122" height="16" uuid="1880618a-4c92-4fb7-8050-ea84b3e86c9c"/>
 				<textElement>
-					<paragraph rightIndent="5"/>
+					<paragraph rightIndent="3"/>
 				</textElement>
 				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
 			</staticText>
@@ -115,20 +115,9 @@ WHERE
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_FECHA_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="28" y="119" width="122" height="16" uuid="eb27367d-41ca-450d-bd63-eff833588723"/>
-				<textElement>
-					<paragraph rightIndent="5"/>
-				</textElement>
-				<text><![CDATA[NÚMERO DE SOLICITUD:]]></text>
-			</staticText>
-			<textField>
-				<reportElement style="Texto Contenido" x="150" y="119" width="100" height="16" uuid="e025322d-5aa0-4b15-bec9-f5c2dcf44578"/>
-				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_NUMERO_SOLICITUD}]]></textFieldExpression>
-			</textField>
-			<staticText>
 				<reportElement style="Texto Contenido" x="269" y="87" width="92" height="16" uuid="c3e22acb-286a-4188-a7c9-aefa336c5dca"/>
 				<textElement>
-					<paragraph rightIndent="5"/>
+					<paragraph rightIndent="3"/>
 				</textElement>
 				<text><![CDATA[DEPARTAMENTO:]]></text>
 			</staticText>
@@ -139,7 +128,7 @@ WHERE
 			<staticText>
 				<reportElement style="Texto Contenido" x="269" y="103" width="92" height="16" uuid="ad967c92-c6de-4bc7-8a78-11eb08c2dc51"/>
 				<textElement>
-					<paragraph rightIndent="5"/>
+					<paragraph rightIndent="3"/>
 				</textElement>
 				<text><![CDATA[SOLICITADO POR:]]></text>
 			</staticText>
@@ -150,7 +139,7 @@ WHERE
 			<staticText>
 				<reportElement style="Texto Contenido" x="269" y="119" width="92" height="16" uuid="b77af9df-719b-46c3-9194-bef30602fd23"/>
 				<textElement>
-					<paragraph rightIndent="5"/>
+					<paragraph rightIndent="3"/>
 				</textElement>
 				<text><![CDATA[JEFE INMEDIATO:]]></text>
 			</staticText>
@@ -163,7 +152,7 @@ WHERE
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[AUTORIDAD DE PASAPORTES EN PANAMÁ]]></text>
+				<text><![CDATA[AUTORIDAD DE PASAPORTES DE PANAMÁ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="0" y="65" width="572" height="16" backcolor="#99CCFF" uuid="bbc9e433-b37d-46ed-83ec-d37b09bb56db"/>
@@ -191,30 +180,26 @@ WHERE
 				<text><![CDATA[Item]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="71" y="6" width="200" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="71" y="6" width="305" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
 				<textElement textAlignment="Left">
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<text><![CDATA[Descripción]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="271" y="6" width="60" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="376" y="6" width="60" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
 				<textElement>
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<text><![CDATA[Unidad]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="331" y="6" width="68" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="436" y="6" width="68" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
 				<text><![CDATA[Solicitado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="399" y="6" width="68" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="471a6bf0-8a80-4c38-b10f-4ad62e77b203"/>
+				<reportElement style="Colummna Header" mode="Opaque" x="504" y="6" width="68" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="471a6bf0-8a80-4c38-b10f-4ad62e77b203"/>
 				<text><![CDATA[Entregado]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="Colummna Header" mode="Opaque" x="467" y="6" width="105" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="277288fe-06f4-45d5-abae-c0e3423b642f"/>
-				<text><![CDATA[Orden de Compra]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -229,7 +214,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="71" y="0" width="200" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
+				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="71" y="0" width="305" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
 				<textElement>
 					<font size="9"/>
 					<paragraph leftIndent="3"/>
@@ -237,22 +222,19 @@ WHERE
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS_LABEL}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="271" y="0" width="60" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
+				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="376" y="0" width="60" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
 				<textElement textAlignment="Left">
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_UNIDAD}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="331" y="0" width="68" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
+				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="436" y="0" width="68" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEM_UNID}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="399" y="0" width="68" height="20" uuid="6c730669-07ee-40d1-b65f-eace968ca70a"/>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="467" y="0" width="105" height="20" uuid="159a19b4-f202-4f71-bae6-12bffff567b1"/>
+				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="504" y="0" width="68" height="20" uuid="6c730669-07ee-40d1-b65f-eace968ca70a"/>
 			</textField>
 		</band>
 	</detail>
