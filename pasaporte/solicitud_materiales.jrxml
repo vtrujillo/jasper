@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="2.0"/>
-	<property name="ireport.x" value="226"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
@@ -111,9 +111,6 @@ WHERE
 			</textField>
 			<staticText>
 				<reportElement style="Texto Contenido" x="281" y="89" width="91" height="16" uuid="40e0f171-d23b-473e-b9ee-bb4e4b2e773b"/>
-				<textElement>
-					<paragraph rightIndent="5"/>
-				</textElement>
 				<text><![CDATA[DEPARTAMENTO:]]></text>
 			</staticText>
 			<textField>
@@ -122,9 +119,6 @@ WHERE
 			</textField>
 			<staticText>
 				<reportElement style="Texto Contenido" x="281" y="105" width="91" height="16" uuid="d6ff747a-cff9-41f7-8004-de79929f3203"/>
-				<textElement>
-					<paragraph rightIndent="5"/>
-				</textElement>
 				<text><![CDATA[SOLICITADO POR:]]></text>
 			</staticText>
 			<textField>
