@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="informe_mensual_salidas_subreport_total_por_categorias" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="5cef4a98-14ea-477c-a900-3a79ca58d952">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="92"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="FECHA_INI" class="java.util.Date"/>
+	<parameter name="FECHA_FIN" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT categoria, departamento,SUM(costo_tot) AS CostoTotal  FROM mxtrainv
+LEFT JOIN (SELECT categoria,item AS itm FROM mxctainv) AS inv ON itm=item
+WHERE
+    mxtrainv.`FECHA` BETWEEN $P{FECHA_INI} AND $P{FECHA_FIN}
+GROUP BY categoria,departamento
+ORDER BY categoria]]>
+	</queryString>
+	<field name="categoria" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="departamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CostoTotal" class="java.lang.Double"/>
+	<variable name="total_por_cat" class="java.lang.Double" resetType="Group" resetGroup="categoria" calculation="Sum">
+		<variableExpression><![CDATA[$F{CostoTotal}.doubleValue()]]></variableExpression>
+	</variable>
+	<variable name="total_gen" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{CostoTotal}.doubleValue()]]></variableExpression>
+	</variable>
+	<group name="categoria">
+		<groupExpression><![CDATA[$F{categoria}]]></groupExpression>
+		<groupFooter>
+			<band height="20">
+				<textField>
+					<reportElement x="13" y="0" width="84" height="20" uuid="3d1324fd-0a62-44ec-81c7-4210f46b5520"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{categoria}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="98" y="0" width="89" height="20" uuid="665fb9cc-c2f7-461f-ba9b-dc337c4649c7"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$V{total_por_cat}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<summary>
+		<band height="50">
+			<textField pattern="#,##0.00">
+				<reportElement x="98" y="0" width="89" height="20" uuid="a30f526f-9613-41ed-912d-9f96ec673794"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{total_gen}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="0" width="84" height="20" uuid="f67bcbf9-3af5-43e1-a6c9-e85125978643"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
