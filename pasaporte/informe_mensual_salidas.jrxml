@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="33"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="460"/>
+	<property name="ireport.y" value="14"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -31,17 +31,21 @@
 		<defaultValueExpression><![CDATA["/Users/vtrujill0/Documents/Ginteven/jasper/pasaporte/"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[SELECT departamento,categoria,SUM(costo_tot) AS CostoTotal  FROM mxtrainv
-LEFT JOIN (SELECT categoria,item AS itm FROM mxctainv) AS inv ON itm=item
+		<![CDATA[select mxctainv.categoria,mxctagrp.descripcion,mxtrainv.departamento, sum(mxtrainv.costo_tot) AS CostoTotal from mxtrainv
+left join mxctainv ON mxtrainv.item=mxctainv.item
+left join mxctagrp ON mxctagrp.categoria=mxctainv.categoria
 WHERE
-    mxtrainv.`FECHA` BETWEEN $P{FECHA_INI} AND $P{FECHA_FIN}
+    mxtrainv.FECHA BETWEEN $P{FECHA_INI} AND $P{FECHA_FIN}
 GROUP BY categoria,departamento
-ORDER BY departamento]]>
+ORDER BY departamento,categoria]]>
 	</queryString>
-	<field name="departamento" class="java.lang.String">
+	<field name="categoria" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="categoria" class="java.lang.String">
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="departamento" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="CostoTotal" class="java.math.BigDecimal"/>
@@ -80,23 +84,24 @@ ORDER BY departamento]]>
 		</groupHeader>
 		<groupFooter>
 			<band height="21">
-				<staticText>
-					<reportElement x="71" y="1" width="84" height="20" uuid="d993c5f9-36b8-42fe-851e-553157a4e5a3"/>
-					<text><![CDATA[TOTAL]]></text>
-				</staticText>
 				<line>
 					<reportElement x="0" y="0" width="1" height="21" uuid="5c0f047d-1d73-494a-a425-774d340dd73e"/>
 				</line>
+				<staticText>
+					<reportElement x="325" y="1" width="84" height="20" uuid="d993c5f9-36b8-42fe-851e-553157a4e5a3"/>
+					<textElement textAlignment="Right"/>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
 				<line>
-					<reportElement x="571" y="0" width="1" height="21" uuid="3649866d-838f-41b9-a0cd-cc408d66bb3a"/>
+					<reportElement x="411" y="1" width="89" height="1" uuid="8cf30173-4b37-49c0-957d-cc9cc57b34e7"/>
 				</line>
 				<textField evaluationTime="Group" evaluationGroup="categorias" pattern="#,##0.00" isBlankWhenNull="true">
-					<reportElement x="157" y="1" width="89" height="20" uuid="e23c35c2-ae7c-4566-8e17-d836359b0827"/>
+					<reportElement x="411" y="1" width="89" height="20" uuid="e23c35c2-ae7c-4566-8e17-d836359b0827"/>
 					<textElement textAlignment="Right"/>
 					<textFieldExpression><![CDATA[$V{total_por_cat}]]></textFieldExpression>
 				</textField>
 				<line>
-					<reportElement x="157" y="1" width="89" height="1" uuid="8cf30173-4b37-49c0-957d-cc9cc57b34e7"/>
+					<reportElement x="571" y="0" width="1" height="21" uuid="3649866d-838f-41b9-a0cd-cc408d66bb3a"/>
 				</line>
 				<line>
 					<reportElement x="1" y="20" width="570" height="1" uuid="5b540a80-69c5-4c86-a63e-e56e4df7747f"/>
@@ -105,16 +110,34 @@ ORDER BY departamento]]>
 		</groupFooter>
 	</group>
 	<pageHeader>
-		<band height="96" splitType="Stretch">
+		<band height="101" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
+				<imageExpression><![CDATA["repo:logo_pasaporte.png"]]></imageExpression>
+			</image>
 			<staticText>
-				<reportElement x="40" y="14" width="492" height="16" uuid="86263e85-d604-441b-a857-9ade49f5d3ea"/>
+				<reportElement x="1" y="14" width="570" height="16" uuid="86263e85-d604-441b-a857-9ade49f5d3ea"/>
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[AUTORIDAD DE PASAPORTES DE PANAMÁ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Transparent" x="15" y="67" width="393" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="46837b12-e5b9-4cf9-963e-f0722d25c48a"/>
+				<reportElement x="0" y="30" width="572" height="16" uuid="37042bf9-660d-4312-9369-5ef0300ad33c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO DE COMPRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="46" width="571" height="16" uuid="7a8ce669-5d83-4b82-9235-b0085eca084f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Transparent" x="15" y="74" width="393" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="46837b12-e5b9-4cf9-963e-f0722d25c48a"/>
 				<box>
 					<pen lineWidth="0.0" lineColor="#FFFFFF"/>
 					<topPen lineWidth="0.0" lineColor="#FFFFFF"/>
@@ -127,29 +150,22 @@ ORDER BY departamento]]>
 				</textElement>
 				<text><![CDATA[INFORME MENSUAL DE LAS SALIDAD REGISTRADAS DURANTE EL MES DESDE]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="0" y="30" width="572" height="16" uuid="37042bf9-660d-4312-9369-5ef0300ad33c"/>
-				<textElement textAlignment="Center">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
-			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="411" y="67" width="67" height="16" uuid="354d68cc-f02b-4a3a-bb31-3bb2da191063"/>
+				<reportElement x="411" y="74" width="67" height="16" uuid="354d68cc-f02b-4a3a-bb31-3bb2da191063"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{FECHA_INI}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement x="496" y="67" width="70" height="16" uuid="2a673ceb-ada2-456b-a800-81cc93d392e5"/>
+				<reportElement x="496" y="74" width="70" height="16" uuid="2a673ceb-ada2-456b-a800-81cc93d392e5"/>
 				<textElement>
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{FECHA_FIN}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Colummna Header" mode="Transparent" x="479" y="67" width="16" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="2fb2be52-aeee-4136-af51-2033307a2629"/>
+				<reportElement style="Colummna Header" mode="Transparent" x="479" y="74" width="16" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="2fb2be52-aeee-4136-af51-2033307a2629"/>
 				<box>
 					<pen lineWidth="0.0" lineColor="#FFFFFF"/>
 					<topPen lineWidth="0.0" lineColor="#FFFFFF"/>
@@ -166,14 +182,14 @@ ORDER BY departamento]]>
 	</pageHeader>
 	<detail>
 		<band height="20">
+			<textField pattern="#,##0.00">
+				<reportElement x="411" y="0" width="89" height="20" uuid="34269ebe-5049-46a1-b190-3d206476cb23"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{CostoTotal}]]></textFieldExpression>
+			</textField>
 			<textField>
 				<reportElement x="71" y="0" width="84" height="20" uuid="3538030f-757e-496d-8133-aa82262a6725"/>
 				<textFieldExpression><![CDATA[$F{categoria}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement x="157" y="0" width="89" height="20" uuid="34269ebe-5049-46a1-b190-3d206476cb23"/>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA[$F{CostoTotal}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="0" y="0" width="1" height="20" uuid="79a548d9-f8ca-4a9d-ba2f-47b3b66d43aa"/>
@@ -181,6 +197,10 @@ ORDER BY departamento]]>
 			<line>
 				<reportElement x="571" y="0" width="1" height="20" uuid="2b625ee6-ca02-4916-81b8-2bacc5f67f0e"/>
 			</line>
+			<textField>
+				<reportElement x="157" y="0" width="252" height="20" uuid="94e72292-8eea-46a9-8210-daa1bdeadd9d"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<pageFooter>
@@ -203,11 +223,14 @@ ORDER BY departamento]]>
 	<summary>
 		<band height="162">
 			<staticText>
-				<reportElement x="71" y="42" width="143" height="20" isPrintInFirstWholeBand="true" uuid="d572b3f5-91f7-4518-858b-655e426dbb58"/>
+				<reportElement x="71" y="42" width="160" height="20" isPrintInFirstWholeBand="true" uuid="d572b3f5-91f7-4518-858b-655e426dbb58"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[TOTAL POR CATEGORIAS:]]></text>
 			</staticText>
 			<subreport>
-				<reportElement x="71" y="64" width="200" height="91" isPrintInFirstWholeBand="true" uuid="ce24bdb4-b3cf-4ada-9127-e9568d130e0f"/>
+				<reportElement x="71" y="64" width="254" height="91" isPrintInFirstWholeBand="true" uuid="ce24bdb4-b3cf-4ada-9127-e9568d130e0f"/>
 				<subreportParameter name="FECHA_INI">
 					<subreportParameterExpression><![CDATA[$P{FECHA_INI}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -218,12 +241,15 @@ ORDER BY departamento]]>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "informe_mensual_salidas_subreport_total_por_categorias.jasper"]]></subreportExpression>
 			</subreport>
 			<textField pattern="#,##0.00">
-				<reportElement x="222" y="11" width="89" height="20" isPrintInFirstWholeBand="true" uuid="4bf6fb4a-2eb7-4a5b-a38a-aaf8c3ce6de0"/>
+				<reportElement x="303" y="11" width="89" height="20" isPrintInFirstWholeBand="true" uuid="4bf6fb4a-2eb7-4a5b-a38a-aaf8c3ce6de0"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$V{total_gen}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="71" y="11" width="150" height="20" isPrintInFirstWholeBand="true" uuid="8305fd6b-7c07-4e1c-bdd8-2f4e0a4d0837"/>
+				<reportElement x="71" y="11" width="160" height="20" isPrintInFirstWholeBand="true" uuid="8305fd6b-7c07-4e1c-bdd8-2f4e0a4d0837"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
 				<text><![CDATA[TOTAL POR DEPARTAMENTOS:]]></text>
 			</staticText>
 		</band>
