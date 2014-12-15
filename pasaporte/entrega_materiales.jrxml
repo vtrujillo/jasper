@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="250"/>
-	<property name="ireport.y" value="77"/>
+	<property name="ireport.x" value="173"/>
+	<property name="ireport.y" value="271"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -255,7 +255,7 @@ WHERE
 				<textFieldExpression><![CDATA[$F{mxtrainv_ITEM}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="Texto Contenido" x="62" y="0" width="220" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
+				<reportElement style="Texto Contenido" x="60" y="0" width="220" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
 				<textElement>
 					<font size="9"/>
 					<paragraph leftIndent="4"/>
