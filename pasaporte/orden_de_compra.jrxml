@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="1014"/>
+	<property name="ireport.y" value="290"/>
+	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
+	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
+		<box>
+			<pen lineWidth="0.5"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="zebra" mode="Opaque" backcolor="#FFFFFF" vAlign="Middle">
+		<pen lineStyle="Double"/>
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[java.lang.Boolean.valueOf($V{REPORT_COUNT}%2 == 0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="IDCOMPRA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[209]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     mxctainv.`ITEM` AS mxctainv_ITEM,
+     mxctainv.`DESCRIPCION` AS mxctainv_DESCRIPCION,
+     mxctainv.`ITBM` AS mxctainv_ITBM,
+     mxctainv.`COD_PROVEE` AS mxctainv_COD_PROVEE,
+     mxenccpa.`ID_COMPRA` AS mxenccpa_ID_COMPRA,
+     mxenccpa.`FECHA` AS mxenccpa_FECHA,
+     mxenccpa.`COD_PROVEE` AS mxenccpa_COD_PROVEE,
+     mxenccpa.`SUB_TOTAL` AS mxenccpa_SUB_TOTAL,
+     mxenccpa.`ITBM` AS mxenccpa_ITBM,
+     mxenccpa.`TOTAL` AS mxenccpa_TOTAL,
+     mxenccpa.`FACTURA` AS mxenccpa_FACTURA,
+     mxenccpa.`ORDEN_COMPRA` AS mxenccpa_ORDEN_COMPRA,
+     mxenccpa.`USUARIO_MODIF` AS mxenccpa_USUARIO_MODIF,
+     mxrencpa.`ID_COMPRA` AS mxrencpa_ID_COMPRA,
+     mxrencpa.`ITEM` AS mxrencpa_ITEM,
+     mxrencpa.`CANTIDAD` AS mxrencpa_CANTIDAD,
+     mxrencpa.`UNIDAD` AS mxrencpa_UNIDAD,
+     mxrencpa.`COSTO` AS mxrencpa_COSTO,
+     mxrencpa.`COSTO_TOT` AS mxrencpa_COSTO_TOT,
+     mxctainv.`ITEM` AS mxctainv_ITEM,
+     mxctainv.`DESCRIPCION` AS mxctainv_DESCRIPCION,
+     mxctainv.`CATEGORIA` AS mxctainv_CATEGORIA,
+     mxctainv.`EXMIN` AS mxctainv_EXMIN,
+     mxctainv.`UNIDAD` AS mxctainv_UNIDAD,
+     mxctainv.`COD_PROVEE` AS mxctainv_COD_PROVEE,
+     mxctainv.`ULT_COSTO` AS mxctainv_ULT_COSTO,
+     mxctainv.`COSTO_ACT` AS mxctainv_COSTO_ACT,
+     mxctainv.`EXISTE_ACT` AS mxctainv_EXISTE_ACT,
+     mxctainv.`ACU_ENT` AS mxctainv_ACU_ENT,
+     mxctainv.`ACU_COS` AS mxctainv_ACU_COS,
+     mxctainv.`FECHA_CREACION` AS mxctainv_FECHA_CREACION,
+     mxctainv.`COSTO_ANT` AS mxctainv_COSTO_ANT,
+     mxctainv.`ESTATUS` AS mxctainv_ESTATUS,
+     mxctainv.`CTA_CONTABLE` AS mxctainv_CTA_CONTABLE,
+     mxctainv.`CLASIFICACION` AS mxctainv_CLASIFICACION,
+     mxctainv.`UBICACION_FISICA` AS mxctainv_UBICACION_FISICA,
+     mxctainv.`ITBM` AS mxctainv_ITBM,
+     mxctapro.`COD_PROVEE` AS mxctapro_COD_PROVEE,
+     mxctapro.`DESCRIPCION` AS mxctapro_DESCRIPCION,
+     mxenccpa.`RECIBIDO` AS mxenccpa_RECIBIDO
+FROM
+     `mxenccpa` mxenccpa INNER JOIN `mxrencpa` mxrencpa ON mxenccpa.`ID_COMPRA` = mxrencpa.`ID_COMPRA`
+     INNER JOIN `mxctainv` mxctainv ON mxrencpa.`ITEM` = mxctainv.`ITEM`
+     INNER JOIN `mxctapro` mxctapro ON mxenccpa.`COD_PROVEE` = mxctapro.`COD_PROVEE`
+WHERE
+     mxenccpa.`ID_COMPRA` = $P{IDCOMPRA}]]>
+	</queryString>
+	<field name="mxctainv_ITEM" class="java.lang.String"/>
+	<field name="mxctainv_DESCRIPCION" class="java.lang.String"/>
+	<field name="mxctainv_ITBM" class="java.math.BigDecimal"/>
+	<field name="mxctainv_COD_PROVEE" class="java.lang.Integer"/>
+	<field name="mxenccpa_ID_COMPRA" class="java.lang.Integer"/>
+	<field name="mxenccpa_FECHA" class="java.sql.Timestamp"/>
+	<field name="mxenccpa_COD_PROVEE" class="java.lang.Integer"/>
+	<field name="mxenccpa_SUB_TOTAL" class="java.math.BigDecimal"/>
+	<field name="mxenccpa_ITBM" class="java.math.BigDecimal"/>
+	<field name="mxenccpa_TOTAL" class="java.math.BigDecimal"/>
+	<field name="mxenccpa_FACTURA" class="java.lang.String"/>
+	<field name="mxenccpa_ORDEN_COMPRA" class="java.lang.String"/>
+	<field name="mxenccpa_USUARIO_MODIF" class="java.lang.String"/>
+	<field name="mxrencpa_ID_COMPRA" class="java.lang.Integer"/>
+	<field name="mxrencpa_ITEM" class="java.lang.String"/>
+	<field name="mxrencpa_CANTIDAD" class="java.lang.Integer"/>
+	<field name="mxrencpa_UNIDAD" class="java.lang.String"/>
+	<field name="mxrencpa_COSTO" class="java.math.BigDecimal"/>
+	<field name="mxrencpa_COSTO_TOT" class="java.math.BigDecimal"/>
+	<field name="mxctainv_CATEGORIA" class="java.lang.String"/>
+	<field name="mxctainv_EXMIN" class="java.lang.Integer"/>
+	<field name="mxctainv_UNIDAD" class="java.lang.String"/>
+	<field name="mxctainv_ULT_COSTO" class="java.math.BigDecimal"/>
+	<field name="mxctainv_COSTO_ACT" class="java.math.BigDecimal"/>
+	<field name="mxctainv_EXISTE_ACT" class="java.lang.Integer"/>
+	<field name="mxctainv_ACU_ENT" class="java.lang.Integer"/>
+	<field name="mxctainv_ACU_COS" class="java.math.BigDecimal"/>
+	<field name="mxctainv_FECHA_CREACION" class="java.sql.Date"/>
+	<field name="mxctainv_COSTO_ANT" class="java.math.BigDecimal"/>
+	<field name="mxctainv_ESTATUS" class="java.lang.Object"/>
+	<field name="mxctainv_CTA_CONTABLE" class="java.lang.String"/>
+	<field name="mxctainv_CLASIFICACION" class="java.lang.Integer"/>
+	<field name="mxctainv_UBICACION_FISICA" class="java.lang.String"/>
+	<field name="mxctapro_COD_PROVEE" class="java.lang.Integer"/>
+	<field name="mxctapro_DESCRIPCION" class="java.lang.String"/>
+	<field name="mxenccpa_RECIBIDO" class="java.lang.Integer"/>
+	<variable name="subtotal" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="itbms" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="179" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="89" width="572" height="77" backcolor="#EFF7FF" uuid="f79cd13c-d3aa-4ebb-a375-56b59e5e3d72"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
+				<imageExpression><![CDATA["repo:logo_pasaporte.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="11" width="572" height="16" uuid="034e24c9-95c6-465c-8649-ad6c4f74192f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPÚBLICA DE PANAMÁ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Texto Contenido" x="19" y="102" width="63" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
+				<textElement>
+					<paragraph rightIndent="1"/>
+				</textElement>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Texto Contenido" x="84" y="102" width="204" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
+				<textFieldExpression><![CDATA[$F{mxenccpa_ID_COMPRA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="0" y="73" width="572" height="16" backcolor="#99CCFF" uuid="bbc9e433-b37d-46ed-83ec-d37b09bb56db"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDEN DE COMPRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="43" width="572" height="16" uuid="a7c07133-9d37-465e-9bc3-bbe6419f5af0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECIBO DE MERCANCÍAS EN ALMACEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Texto Contenido" x="19" y="119" width="63" height="16" uuid="d99eb8fe-30ec-4275-b9df-04445112344a"/>
+				<textElement>
+					<paragraph rightIndent="1"/>
+				</textElement>
+				<text><![CDATA[FECHA:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Texto Contenido" x="84" y="119" width="204" height="16" uuid="94aa3064-4357-44b8-bb51-4ac3b390247e"/>
+				<textFieldExpression><![CDATA[$F{mxenccpa_FECHA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="19" y="136" width="63" height="16" uuid="ef0b4631-18ad-4d2d-b2de-78c5d97b7b51"/>
+				<textElement>
+					<paragraph rightIndent="1"/>
+				</textElement>
+				<text><![CDATA[PROVEEDOR:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Texto Contenido" x="84" y="136" width="294" height="16" uuid="390f4770-d383-4be2-9306-8e2959f2980d"/>
+				<textFieldExpression><![CDATA[$F{mxctapro_DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="27" width="572" height="16" uuid="ed71260a-c94a-4d7a-89a9-c788d967aea7"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORIDAD DE PASAPORTES DE PANAMÁ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Texto Contenido" x="454" y="120" width="111" height="16" uuid="f0f5719f-669c-495c-a0a5-139016ec441f"/>
+				<textFieldExpression><![CDATA[$F{mxenccpa_ORDEN_COMPRA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="388" y="120" width="64" height="16" uuid="7b34422c-7f61-4bcf-9e40-1057750cb2df"/>
+				<textElement>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[O/C]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Texto Contenido" x="454" y="136" width="111" height="16" uuid="cde6cc60-0653-4e24-81ed-87ee455da3d7"/>
+				<textFieldExpression><![CDATA[$F{mxenccpa_FACTURA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="388" y="136" width="64" height="16" uuid="915bf584-3a8c-4840-beb7-340b6020685f"/>
+				<textElement>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[FACTURA:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="0" y="6" width="62" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="e840b092-8315-48e4-93eb-fd756538ce70"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="173" y="6" width="281" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="62" y="6" width="54" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="116" y="6" width="57" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
+				<text><![CDATA[Unidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="454" y="6" width="54" height="20" backcolor="#99CCFF" uuid="2debdda4-8de0-4979-a03c-08ff73ade19e"/>
+				<text><![CDATA[Costo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="508" y="6" width="64" height="20" backcolor="#99CCFF" uuid="7d8a41b1-fada-49b9-828a-eae36101db64"/>
+				<text><![CDATA[Costo Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="0" y="0" width="62" height="20" uuid="2e1eba47-c3f5-4ce1-9ead-53ff8f9b0b9c"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxrencpa_ITEM}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="173" y="0" width="281" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxctainv_DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="62" y="0" width="54" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
+				<textElement textAlignment="Center">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxrencpa_CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="116" y="0" width="57" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mxrencpa_UNIDAD}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="454" y="0" width="54" height="20" uuid="c536c31a-dac0-47ac-b039-6ccc9217713c"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxrencpa_COSTO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="508" y="0" width="64" height="20" uuid="baf142db-fbbf-46c7-bb7f-82ee4b2b3eb9"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxrencpa_COSTO_TOT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="10" width="80" height="20" uuid="b7d4b0ba-b231-4f87-b33f-3580213095e9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["PAGINA "+$V{PAGE_NUMBER}+" DE"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="531" y="10" width="40" height="20" uuid="9ccea06e-801a-411f-9928-da9f2e068d17"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="10" width="100" height="20" uuid="22a14afd-3087-450f-897d-e8b32cee3b22"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="328">
+			<rectangle>
+				<reportElement x="451" y="5" width="121" height="60" backcolor="#EFF7FF" uuid="187737c6-4c34-4eb7-bb79-1ac0b9c43734"/>
+			</rectangle>
+			<textField>
+				<reportElement x="102" y="5" width="29" height="20" uuid="b618ecb7-c2c7-4f07-be11-2bcdb6d2136c"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="5" width="99" height="20" uuid="244b4d36-4522-4862-9715-4e130f5b173d"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Cantidad de Items:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="68" y="153" width="156" height="20" uuid="ea7b51c4-93da-4f77-8796-863f8b90610f"/>
+				<textElement textAlignment="Center">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ENCARGADO DE ALMACEN Y ENCARGADO DE REGISTRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="153" width="126" height="20" uuid="8699c427-2737-4b31-9436-7cfe45c3cfa6"/>
+				<textElement textAlignment="Center">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ALMACENISTA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="46" y="148" width="200" height="1" uuid="7742f0a5-9973-425c-a81a-4c90ca1009cd"/>
+			</line>
+			<line>
+				<reportElement x="329" y="148" width="200" height="1" uuid="a93b2d17-a440-43e7-b19c-63b6692e1745"/>
+			</line>
+			<staticText>
+				<reportElement x="450" y="5" width="62" height="20" uuid="8286d314-909e-4343-a38e-14b302ea9e36"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Sub Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="25" width="62" height="20" uuid="57dacc44-7bf1-4802-89ca-b285729c510b"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[ITBMS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="45" width="62" height="20" uuid="92978582-4109-4e48-b016-0a40a7039598"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="512" y="5" width="59" height="20" uuid="92ab1f4b-277f-451c-a1b1-ba33de7e070e"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxenccpa_SUB_TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="512" y="25" width="59" height="20" uuid="df09a19a-86d9-44f2-a81e-8358ec026165"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxenccpa_ITBM}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="512" y="45" width="59" height="20" uuid="42a6e527-8057-418a-a4f4-931b9bc31480"/>
+				<textElement textAlignment="Right">
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mxenccpa_TOTAL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="78" y="172" width="138" height="20" uuid="95669e38-c43a-4f18-a954-fe09c7891a0a"/>
+				<textElement textAlignment="Center">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ENCARGADO DE REGISTRO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="200" y="265" width="200" height="1" uuid="c488e4ee-725f-473b-bcbf-27b8b224dd23"/>
+			</line>
+			<staticText>
+				<reportElement x="237" y="270" width="126" height="20" uuid="5326f86e-bff9-4fdb-acd0-b472895b633a"/>
+				<textElement textAlignment="Center">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[AUDITORIA INTERNA]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
