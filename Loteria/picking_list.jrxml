@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
-	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="46"/>
 	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
 	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
@@ -90,7 +90,7 @@ WHERE
 			</rectangle>
 			<image>
 				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
-				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
+				<imageExpression><![CDATA["repo:logo_lnb.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement style="Texto Contenido" x="19" y="87" width="123" height="16" uuid="98ba7a1b-aad6-4b48-bc49-5398bd416f34"/>
@@ -186,34 +186,43 @@ WHERE
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="0" y="6" width="71" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="e840b092-8315-48e4-93eb-fd756538ce70"/>
 				<textElement textAlignment="Left">
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<text><![CDATA[Item]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="71" y="6" width="200" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
 				<textElement textAlignment="Left">
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<text><![CDATA[Descripción]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="271" y="6" width="60" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
 				<textElement textAlignment="Left">
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<text><![CDATA[Unidad]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="331" y="6" width="68" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<text><![CDATA[Solicitado]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="399" y="6" width="68" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="471a6bf0-8a80-4c38-b10f-4ad62e77b203"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<text><![CDATA[Entregado]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="467" y="6" width="105" height="20" forecolor="#000000" backcolor="#99CCFF" uuid="277288fe-06f4-45d5-abae-c0e3423b642f"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<text><![CDATA[Orden de Compra]]></text>
 			</staticText>
 		</band>
@@ -223,34 +232,42 @@ WHERE
 			<textField isStretchWithOverflow="true">
 				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="0" y="0" width="71" height="20" uuid="2e1eba47-c3f5-4ce1-9ead-53ff8f9b0b9c"/>
 				<textElement>
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="71" y="0" width="200" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
 				<textElement>
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS_LABEL}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="271" y="0" width="60" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
 				<textElement textAlignment="Left">
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_UNIDAD}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="331" y="0" width="68" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEM_UNID}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="399" y="0" width="68" height="20" uuid="6c730669-07ee-40d1-b65f-eace968ca70a"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement style="zebra" stretchType="RelativeToBandHeight" x="467" y="0" width="105" height="20" uuid="159a19b4-f202-4f71-bae6-12bffff567b1"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
 			</textField>
 		</band>
 	</detail>

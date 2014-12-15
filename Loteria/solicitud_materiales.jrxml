@@ -91,7 +91,7 @@ WHERE
 			</rectangle>
 			<image>
 				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
-				<imageExpression><![CDATA["repo:logo.png"]]></imageExpression>
+				<imageExpression><![CDATA["repo:logo_lnb.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement style="Texto Contenido" x="12" y="89" width="122" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
@@ -197,22 +197,37 @@ WHERE
 		<band height="26" splitType="Stretch">
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="27" y="2" width="86" height="20" backcolor="#99CCFF" uuid="e840b092-8315-48e4-93eb-fd756538ce70"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<text><![CDATA[ITEM]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="113" y="2" width="291" height="20" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<text><![CDATA[DESCRIPCIÓN]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="404" y="2" width="100" height="20" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<text><![CDATA[UNIDAD]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="504" y="2" width="68" height="20" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<text><![CDATA[CANTIDAD]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="0" y="2" width="27" height="20" backcolor="#99CCFF" uuid="2bec0f5c-bc58-41d4-88f4-57b158327587"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<text><![CDATA[NRO]]></text>
 			</staticText>
 		</band>
@@ -223,7 +238,7 @@ WHERE
 				<reportElement x="27" y="0" width="86" height="20" uuid="2e1eba47-c3f5-4ce1-9ead-53ff8f9b0b9c"/>
 				<textElement>
 					<font size="9"/>
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS}]]></textFieldExpression>
 			</textField>
@@ -231,24 +246,29 @@ WHERE
 				<reportElement x="113" y="0" width="291" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
 				<textElement>
 					<font size="9"/>
-					<paragraph leftIndent="3"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS_LABEL}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="404" y="0" width="100" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
-				<textElement textAlignment="Center"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_UNIDAD}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="504" y="0" width="68" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
-				<textElement textAlignment="Center"/>
+				<textElement>
+					<paragraph leftIndent="5"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEM_UNID}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="0" width="27" height="20" uuid="d2b9903b-b140-4d07-8e05-a0dad55fee44"/>
 				<textElement textAlignment="Center">
 					<font size="9"/>
+					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
 			</textField>
@@ -272,15 +292,20 @@ WHERE
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="93">
+		<band height="114">
 			<staticText>
-				<reportElement x="243" y="23" width="99" height="20" uuid="952e164d-8405-48b2-8f9c-4df6886f9d95"/>
+				<reportElement x="231" y="24" width="99" height="20" uuid="952e164d-8405-48b2-8f9c-4df6886f9d95"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[AUTORIZADO POR:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="203" y="88" width="180" height="1" uuid="d3758c4f-b4a4-4fb5-aa84-3bb6854e5ac2"/>
+				<reportElement x="191" y="89" width="180" height="1" uuid="d3758c4f-b4a4-4fb5-aa84-3bb6854e5ac2"/>
 			</line>
+			<staticText>
+				<reportElement x="195" y="92" width="172" height="20" uuid="ff899d2e-c044-4f7b-9ff8-a3a0d4ade8de"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[JEFE DE UNIDAD SOLICITANTE]]></text>
+			</staticText>
 		</band>
 	</summary>
 </jasperReport>
