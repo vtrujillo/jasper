@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1454c12f-bf7d-4cda-8b3f-2acb97f98506">
-	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="1040"/>
+	<property name="ireport.y" value="224"/>
 	<parameter name="ID_COMPRA" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[SELECT
@@ -71,7 +71,7 @@ WHERE
 				<text><![CDATA[PROVEEDOR]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="130" y="112" width="442" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
+				<reportElement x="131" y="112" width="441" height="16" uuid="7f5f6c86-8e57-4997-a06f-e94bf58baa92"/>
 				<textElement>
 					<font isUnderline="false"/>
 				</textElement>
@@ -96,7 +96,7 @@ WHERE
 				<text><![CDATA[UNIDAD ADMINISTRATIVA]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement x="131" y="221" width="442" height="16" uuid="94aa3064-4357-44b8-bb51-4ac3b390247e"/>
+				<reportElement x="132" y="221" width="441" height="16" uuid="94aa3064-4357-44b8-bb51-4ac3b390247e"/>
 				<textFieldExpression><![CDATA[$F{mxenccpa_DEP}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -104,7 +104,7 @@ WHERE
 				<text><![CDATA[CÓDIGO ADMINISTRATIVO]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement x="131" y="237" width="442" height="16" uuid="390f4770-d383-4be2-9306-8e2959f2980d"/>
+				<reportElement x="132" y="237" width="441" height="16" uuid="390f4770-d383-4be2-9306-8e2959f2980d"/>
 			</textField>
 			<staticText>
 				<reportElement x="410" y="96" width="66" height="16" uuid="3306e43b-7f1e-4a74-957d-9fc6dfb96d89"/>
@@ -141,13 +141,13 @@ WHERE
 				<text><![CDATA[CAJA MENUDA]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="130" y="142" width="116" height="16" uuid="728a75f1-8dba-4a7c-95e8-2c4581f057b3"/>
+				<reportElement x="131" y="142" width="115" height="16" uuid="728a75f1-8dba-4a7c-95e8-2c4581f057b3"/>
 				<textElement>
 					<font isUnderline="false"/>
 				</textElement>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="130" y="158" width="116" height="16" uuid="45eb7b78-8caa-438b-826c-bbbe18811a17"/>
+				<reportElement x="131" y="158" width="115" height="16" uuid="45eb7b78-8caa-438b-826c-bbbe18811a17"/>
 				<textElement>
 					<font isUnderline="false"/>
 				</textElement>
@@ -161,7 +161,7 @@ WHERE
 				<text><![CDATA[ORDEN DE COMPRA]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="130" y="174" width="116" height="16" uuid="f27845fb-de70-4dc6-901d-5757a7803461"/>
+				<reportElement x="131" y="174" width="115" height="16" uuid="f27845fb-de70-4dc6-901d-5757a7803461"/>
 				<textElement>
 					<font isUnderline="false"/>
 				</textElement>
@@ -171,7 +171,7 @@ WHERE
 				<text><![CDATA[ORDEN DE PAGO]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="130" y="190" width="116" height="16" uuid="603fda6d-e455-4d88-a451-5da9f98dcae8"/>
+				<reportElement x="131" y="190" width="115" height="16" uuid="603fda6d-e455-4d88-a451-5da9f98dcae8"/>
 				<textElement>
 					<font isUnderline="false"/>
 				</textElement>
@@ -215,7 +215,7 @@ WHERE
 				<text><![CDATA[CHEQUE #]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="130" y="96" width="116" height="16" uuid="80d6d891-a782-4dcc-a4c6-d3a485f3595e"/>
+				<reportElement x="131" y="96" width="115" height="16" uuid="80d6d891-a782-4dcc-a4c6-d3a485f3595e"/>
 				<textFieldExpression><![CDATA[$F{mxenccpa_FECHA}]]></textFieldExpression>
 			</textField>
 		</band>
