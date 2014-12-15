@@ -2,8 +2,10 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1454c12f-bf7d-4cda-8b3f-2acb97f98506">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="224"/>
-	<parameter name="ID_COMPRA" class="java.lang.String"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ID_COMPRA" class="java.lang.String">
+		<defaultValueExpression><![CDATA[11]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT
 	mxenccpa.`ID_COMPRA` AS mxenccpa_ID_COMPRA,
@@ -57,7 +59,7 @@ WHERE
 	<pageHeader>
 		<band height="264" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="11" width="572" height="16" uuid="034e24c9-95c6-465c-8649-ad6c4f74192f"/>
+				<reportElement x="145" y="9" width="284" height="16" uuid="034e24c9-95c6-465c-8649-ad6c4f74192f"/>
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
@@ -85,7 +87,7 @@ WHERE
 				<text><![CDATA[FECHA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="41" width="572" height="16" uuid="a7c07133-9d37-465e-9bc3-bbe6419f5af0"/>
+				<reportElement x="145" y="41" width="284" height="16" uuid="a7c07133-9d37-465e-9bc3-bbe6419f5af0"/>
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
@@ -120,14 +122,14 @@ WHERE
 				</textElement>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="26" width="572" height="16" uuid="cb3eb2ce-0e58-4ac5-adf7-52d2186692a2"/>
+				<reportElement x="145" y="25" width="284" height="16" uuid="cb3eb2ce-0e58-4ac5-adf7-52d2186692a2"/>
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[DIRECCIÓN ADMINISTRATIVA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="56" width="572" height="16" uuid="f933e4f0-a880-4ebf-bcd1-c21ea408d680"/>
+				<reportElement x="145" y="57" width="284" height="16" uuid="f933e4f0-a880-4ebf-bcd1-c21ea408d680"/>
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
@@ -218,6 +220,10 @@ WHERE
 				<reportElement x="131" y="96" width="115" height="16" uuid="80d6d891-a782-4dcc-a4c6-d3a485f3595e"/>
 				<textFieldExpression><![CDATA[$F{mxenccpa_FECHA}]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="1" y="0" width="144" height="73" uuid="2d6e1e31-7f6d-411f-bf5a-cc93321e2709"/>
+				<imageExpression><![CDATA["repo:logo_lnb.png"]]></imageExpression>
+			</image>
 		</band>
 	</pageHeader>
 	<columnHeader>
