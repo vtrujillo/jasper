@@ -38,7 +38,7 @@
      PMT_ENCSOL.`FAS_APROB` AS PMT_ENCSOL_FAS_APROB,
      PMT_ENCSOL.`FECHA_ALMACEN` AS PMT_ENCSOL_FECHA_ALMACEN,
      PMT_ENCSOL.`FS_AREA_SOL` AS PMT_ENCSOL_FS_AREA_SOL,
-     PMT_ENCSOL.`FS_FECHA_SOL` AS PMT_ENCSOL_FS_FECHA_SOL,
+     DATE_FORMAT(PMT_ENCSOL.`FS_FECHA_SOL`, '%d/%m/%Y') AS PMT_ENCSOL_FS_FECHA_SOL,
      PMT_ENCSOL.`NUMERO_SOLICITUD` AS PMT_ENCSOL_NUMERO_SOLICITUD,
      PMT_ENCSOL.`FS_NOMBRE_SOL` AS PMT_ENCSOL_FS_NOMBRE_SOL,
      PMT_ENCSOL.`FAS_SUPER` AS PMT_ENCSOL_FAS_SUPER,
@@ -94,36 +94,36 @@ WHERE
 				<imageExpression><![CDATA["repo:logo_lnb.png"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement style="Texto Contenido" x="12" y="89" width="122" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
+				<reportElement style="Texto Contenido" x="12" y="89" width="130" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="131" y="89" width="100" height="16" uuid="77471f00-c4db-4d30-88bd-ba8ca225df0b"/>
+				<reportElement style="Texto Contenido" x="139" y="89" width="100" height="16" uuid="77471f00-c4db-4d30-88bd-ba8ca225df0b"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_APP_NUMBER}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="12" y="105" width="122" height="16" uuid="2a5570e6-0c9d-409e-a929-66c87ab05a5c"/>
+				<reportElement style="Texto Contenido" x="12" y="105" width="130" height="16" uuid="2a5570e6-0c9d-409e-a929-66c87ab05a5c"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
 			</staticText>
 			<textField pattern="dd/MM/yyyy">
-				<reportElement style="Texto Contenido" x="131" y="105" width="100" height="16" uuid="8d88ffa6-8d28-422d-a42a-d85b15cf9ac8"/>
+				<reportElement style="Texto Contenido" x="139" y="105" width="100" height="16" uuid="8d88ffa6-8d28-422d-a42a-d85b15cf9ac8"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_FECHA_SOL}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement style="Texto Contenido" x="12" y="121" width="122" height="16" uuid="3653ae76-7622-4f38-bd52-b12a9dc4a0c8"/>
+				<reportElement style="Texto Contenido" x="12" y="121" width="130" height="16" uuid="3653ae76-7622-4f38-bd52-b12a9dc4a0c8"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[NÚMERO DE SOLICITUD:]]></text>
 			</staticText>
 			<textField>
-				<reportElement style="Texto Contenido" x="131" y="121" width="100" height="16" uuid="1427c626-08fd-4972-93b7-1e258c4c007d"/>
+				<reportElement style="Texto Contenido" x="139" y="121" width="100" height="16" uuid="1427c626-08fd-4972-93b7-1e258c4c007d"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_NUMERO_SOLICITUD}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -181,14 +181,14 @@ WHERE
 				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Texto Contenido" x="12" y="137" width="122" height="16" uuid="29ed86c7-ca79-4e72-83e7-c73556c9d2b0"/>
+				<reportElement style="Texto Contenido" x="12" y="137" width="130" height="16" uuid="29ed86c7-ca79-4e72-83e7-c73556c9d2b0"/>
 				<textElement>
 					<paragraph rightIndent="5"/>
 				</textElement>
 				<text><![CDATA[COMENTARIO:]]></text>
 			</staticText>
-			<textField>
-				<reportElement style="Texto Contenido" x="131" y="137" width="441" height="16" uuid="723020dd-f754-4ff0-a55d-afea2870a47f"/>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Texto Contenido" x="139" y="137" width="433" height="16" uuid="723020dd-f754-4ff0-a55d-afea2870a47f"/>
 				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_COMENTARIOS_SOLICITUD}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -197,7 +197,7 @@ WHERE
 		<band height="26" splitType="Stretch">
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="27" y="2" width="86" height="20" backcolor="#99CCFF" uuid="e840b092-8315-48e4-93eb-fd756538ce70"/>
-				<textElement textAlignment="Left">
+				<textElement>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<text><![CDATA[ITEM]]></text>
@@ -211,14 +211,14 @@ WHERE
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="404" y="2" width="100" height="20" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
-				<textElement textAlignment="Left">
+				<textElement>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<text><![CDATA[UNIDAD]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Colummna Header" mode="Opaque" x="504" y="2" width="68" height="20" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
-				<textElement textAlignment="Left">
+				<textElement>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<text><![CDATA[CANTIDAD]]></text>
@@ -252,14 +252,14 @@ WHERE
 			</textField>
 			<textField>
 				<reportElement x="404" y="0" width="100" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
-				<textElement>
+				<textElement textAlignment="Center">
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_UNIDAD}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="504" y="0" width="68" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
-				<textElement>
+				<textElement textAlignment="Center">
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEM_UNID}]]></textFieldExpression>

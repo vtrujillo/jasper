@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certificacion" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="583e7f05-1399-4b69-92d9-d39066d136a6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="432"/>
+	<parameter name="NUM_CASO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[3947]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select APP_NUMBER,NUMERO_CERTIFICADO, NOMBRES, APELLIDOS,NACIONALIDAD,NUMERO_PASAPORTE,FECHA_NACIMIENTO,NOMBRE_PADRE,NACIONALIDAD_PADRE,NOMBRE_MADRE,NACIONALIDAD_MADRE,ESTATUS,DATE_FORMAT(FECHA_CARNET, "%d-%l-%Y") as FECHA_CARNET,FECHA_PROCESO, FECHA_LLEGADA,FUNCIONARIO_RESOLUCION, NUMERO_REGISTRO,PARA_USO, VALIDO
+from PMT_ESTATUS
+where APP_NUMBER = $P{NUM_CASO}]]>
+	</queryString>
+	<field name="APP_NUMBER" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUMERO_CERTIFICADO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOMBRES" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="APELLIDOS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NACIONALIDAD" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUMERO_PASAPORTE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_NACIMIENTO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOMBRE_PADRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NACIONALIDAD_PADRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOMBRE_MADRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NACIONALIDAD_MADRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ESTATUS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_CARNET" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_PROCESO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_LLEGADA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FUNCIONARIO_RESOLUCION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUMERO_REGISTRO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PARA_USO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="VALIDO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752">
+			<image>
+				<reportElement x="86" y="129" width="401" height="494" uuid="9e88746a-2eeb-4a8b-aefa-4b8752fafbc5"/>
+				<imageExpression><![CDATA["repo:ma_migracion.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="171" y="0" width="230" height="15" uuid="d4b6f730-9149-4f3b-954b-ff8ecbfbcf53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPÚBLICA DE PANAMÁ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="171" y="15" width="230" height="15" uuid="fc6ee0c4-6ba2-484c-8c60-6786f8325d6b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MINISTERIO DE SEGURIDAD PÚBLICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="171" y="30" width="230" height="15" uuid="43028800-8e6a-442e-847d-662fc249ccd4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SERVICIO NACIONAL DE MIGRACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="146" y="45" width="280" height="15" uuid="63f01a92-6165-4946-a3db-a057664ca81d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO DE SERVICIOS MIGRATORIOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="171" y="60" width="230" height="15" uuid="ff06222f-e480-4bf7-9438-9af8f1c05d41"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECCIÓN DE CERTIFICACIONES]]></text>
+			</staticText>
+			<image>
+				<reportElement mode="Transparent" x="15" y="0" width="540" height="73" uuid="eb17174d-749c-43d5-965c-122783629bb7"/>
+				<imageExpression><![CDATA["repo:logo_migracion.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="480" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="572" height="20" uuid="92edf6b6-35b0-49e4-b82c-70bac7fe68bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<text><![CDATA[A solicitud de parte interesada, el suscrito Director General del Servicio Nacional de Migración, en ejercicio de sus funciones,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="20" width="572" height="20" uuid="b6304da0-75f0-4bfd-b9b9-c2561a18ebbf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CERTIFICA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="40" width="572" height="20" uuid="1a0668fb-2201-4ae5-814a-6b0a4c5551fe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<text><![CDATA[que, según afiliaciones y archivos que se llevan en el Departamento de Certificaciones se encuentra registrado (a):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="79" width="175" height="20" uuid="f15dd412-f469-4206-aa4e-90429965c996"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[NÚMERO DE CERTIFICACIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="99" width="175" height="20" uuid="77aeda0a-3191-4128-99f8-ad7fce0af777"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[NOMBRES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="119" width="175" height="20" uuid="7e35d35d-f9fb-4eac-bcfb-c3941446af25"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="139" width="175" height="20" uuid="52ca6be7-2374-44ee-84d8-ad5cbacce548"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[NACIONALIDAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="159" width="175" height="20" uuid="194244fe-fcac-4299-aabe-f71880d279ec"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[FECHA DE NACIMIENTO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="179" width="175" height="20" uuid="a435aa17-6854-496c-89fc-f659fd8009f4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[PASAPORTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="199" width="175" height="20" uuid="e962c04a-51c0-420b-85b6-fe150ddcef13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DEL PADRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="219" width="175" height="20" uuid="974faf0d-3c1e-4787-9a6b-2bbe09bc7d30"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[NACIONALIDAD DEL PADRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="239" width="175" height="20" uuid="a61259f5-1151-4ef5-b574-6879df761069"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DE LA MADRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="259" width="175" height="20" uuid="1e25b0a6-580c-4b4b-866f-a8548c98f6de"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[NACIONALIDAD DE LA MADRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="279" width="175" height="20" uuid="568399d6-4282-46d2-bf11-68961e08c184"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[FECHA DE LLEGADA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="299" width="175" height="20" uuid="673f7819-91c9-49ac-b68c-b80774eb81c9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[NÚMERO DE REGISTRO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="320" width="175" height="20" uuid="e821dbaf-82cd-4849-a780-fedcace14982"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[FUNCIONARIO RESPONSABLE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="340" width="175" height="20" uuid="e03cd93d-228b-489f-bf6f-1099d83ecb4b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[PARA USO DE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="96" y="360" width="175" height="20" uuid="7d60ac2d-1e54-4664-9770-b12fe3a1b50f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[DADO Y FIRMADO EL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="380" width="57" height="20" uuid="74a2d896-4a2d-4611-9ab3-8890b279efbd"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[ESTATUS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="79" width="205" height="20" uuid="6fdf1778-a30e-4b61-b70e-52309f697bed"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMERO_CERTIFICADO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="99" width="205" height="20" uuid="204bd736-bb6c-4740-8381-86b427f5c598"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="119" width="205" height="20" uuid="339da5ab-a316-4047-827c-ee435c659fd6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{APELLIDOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="139" width="205" height="20" uuid="0c9f8fa2-d160-45d1-854e-4f405e2d43e4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NACIONALIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="159" width="205" height="20" uuid="1e038434-8275-4d0e-86fb-fe73c7d0675e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHA_NACIMIENTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="179" width="205" height="20" uuid="98544ce1-1f4f-4973-97e6-d24aba5c1c9c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMERO_PASAPORTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="199" width="205" height="20" uuid="cfe52e82-1542-4310-b9a0-c5a1f18c4a52"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE_PADRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="219" width="205" height="20" uuid="164eaea3-03cd-4658-905d-5fb92a40b2f6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NACIONALIDAD_PADRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="239" width="205" height="20" uuid="32d4b647-5dfe-4d58-993c-85a620bcd570"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE_MADRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="259" width="205" height="20" uuid="46a6e42a-11a3-4b36-8ae4-45e690441226"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NACIONALIDAD_MADRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="279" width="205" height="20" uuid="ab8ed93d-d75c-4dce-b61b-503f0a6233ac"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHA_LLEGADA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="299" width="205" height="20" uuid="3bf10fcb-5e32-4abd-b8d4-54468325a547"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NUMERO_REGISTRO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="320" width="205" height="20" uuid="cb1ea5ca-8b8d-4753-b529-536507105c35"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FUNCIONARIO_RESOLUCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="340" width="205" height="20" uuid="f02fa106-e435-4212-bfb9-60cd61c7e95f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PARA_USO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="271" y="360" width="205" height="20" uuid="162c2a8a-cf42-4b49-97e9-d3860da5a089"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHA_PROCESO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="0" y="400" width="572" height="50" uuid="119a6d37-4f80-42d5-a06a-f3ac3681b6b4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ESTATUS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="181" y="460" width="211" height="20" uuid="54c0fc19-5d5e-47a6-bfb1-b518bde47f21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+					<paragraph leftIndent="4"/>
+				</textElement>
+				<textFieldExpression><![CDATA["VÁLIDO POR " + ($F{VALIDO} .equals(null)?" ":$F{VALIDO} )+" DÍAS CALENDARIO"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement mode="Transparent" x="96" y="99" width="380" height="1" uuid="261313df-23ea-4738-aa18-0eac0ed19ea1"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="119" width="380" height="1" uuid="2cb620b1-1b94-42c5-badf-91a947028246"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="139" width="380" height="1" uuid="1eb5bcf8-05b2-47ca-9fe7-66c2f2fe4d9b"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="158" width="380" height="1" uuid="394cb34c-fa26-447f-b86d-ea49152690a1"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="179" width="380" height="1" uuid="d3fda493-20f6-4846-861e-0ab9b2ab3b4c"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="198" width="380" height="1" uuid="8d2a2d46-53f8-4d7d-8a13-50f428c97815"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="218" width="380" height="1" uuid="68f2378a-c50e-428d-b6a4-80b06d76fa57"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="238" width="380" height="1" uuid="85d61c0f-413c-4c5f-b755-f5a8a507f450"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="258" width="380" height="1" uuid="099753ff-bacf-475c-9a6f-b7a5b02ec859"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="278" width="380" height="1" uuid="046029c4-c5f0-4213-a7f5-1bdfc74285c4"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="298" width="380" height="1" uuid="a0884885-a078-4b54-86b7-16b3b47f5187"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="318" width="380" height="1" uuid="ea80c4cd-cd82-43c2-b129-40e918c8307b"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="339" width="380" height="1" uuid="a8ef0cab-09f3-437b-ba00-beb76aed2ce2"/>
+			</line>
+			<line>
+				<reportElement mode="Transparent" x="96" y="359" width="380" height="1" uuid="75b4e2ec-57ef-4913-b22c-e4013df9532c"/>
+			</line>
+			<rectangle>
+				<reportElement mode="Transparent" x="96" y="80" width="380" height="300" uuid="1dd657ff-6b26-4888-8f3a-73ac616d0eb0"/>
+			</rectangle>
+			<line>
+				<reportElement mode="Transparent" x="271" y="80" width="1" height="299" uuid="be67af72-6336-4546-87fe-d78b121230fe"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="180">
+			<staticText>
+				<reportElement mode="Opaque" x="194" y="80" width="184" height="30" uuid="66b5e648-522e-4808-a297-e86ec564a00c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JAVIER CARRILLO SILVESTRI
+DIRECTOR GENERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="160" width="572" height="20" uuid="3de60131-4f1f-4a56-8a47-b75e0f12f19d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<text><![CDATA[No es válido si no lleva los 8.00 Balboas en timbres.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

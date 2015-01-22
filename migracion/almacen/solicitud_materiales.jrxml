@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f96284d0-2cbe-4acd-a787-fcfeba8fe834">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="29"/>
+	<style name="Texto Contenido" isDefault="true" hAlign="Left" vAlign="Middle" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Texto Etiquetas" style="Texto Contenido" forecolor="#000000" fontSize="10" isBold="true" isItalic="false" isUnderline="false"/>
+	<style name="Colummna Header" style="Texto Etiquetas" hAlign="Center">
+		<pen lineWidth="0.5"/>
+		<box>
+			<pen lineWidth="1.0"/>
+			<topPen lineWidth="1.0"/>
+			<leftPen lineWidth="1.0"/>
+			<bottomPen lineWidth="1.0"/>
+			<rightPen lineWidth="1.0"/>
+		</box>
+	</style>
+	<style name="zebra" mode="Opaque" backcolor="#FFFFFF">
+		<pen lineStyle="Double"/>
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[java.lang.Boolean.valueOf($V{REPORT_COUNT}%2 == 0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="CASO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[209]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     PMT_ENCSOL.`APP_UID` AS PMT_ENCSOL_APP_UID,
+     PMT_ENCSOL.`APP_NUMBER` AS PMT_ENCSOL_APP_NUMBER,
+     PMT_ENCSOL.`APP_STATUS` AS PMT_ENCSOL_APP_STATUS,
+     PMT_ENCSOL.`COMENTARIOS_SOLICITUD` AS PMT_ENCSOL_COMENTARIOS_SOLICITUD,
+     PMT_ENCSOL.`DATE_SOL` AS PMT_ENCSOL_DATE_SOL,
+     PMT_ENCSOL.`FAS_APROB` AS PMT_ENCSOL_FAS_APROB,
+     PMT_ENCSOL.`FECHA_ALMACEN` AS PMT_ENCSOL_FECHA_ALMACEN,
+     PMT_ENCSOL.`FS_AREA_SOL` AS PMT_ENCSOL_FS_AREA_SOL,
+     PMT_ENCSOL.`FS_FECHA_SOL` AS PMT_ENCSOL_FS_FECHA_SOL,
+     PMT_ENCSOL.`NUMERO_SOLICITUD` AS PMT_ENCSOL_NUMERO_SOLICITUD,
+     PMT_ENCSOL.`FS_NOMBRE_SOL` AS PMT_ENCSOL_FS_NOMBRE_SOL,
+     PMT_ENCSOL.`FAS_SUPER` AS PMT_ENCSOL_FAS_SUPER,
+     PMT_RENSOL.`APP_UID` AS PMT_RENSOL_APP_UID,
+     PMT_RENSOL.`APP_NUMBER` AS PMT_RENSOL_APP_NUMBER,
+     PMT_RENSOL.`APP_STATUS` AS PMT_RENSOL_APP_STATUS,
+     PMT_RENSOL.`ROW` AS PMT_RENSOL_ROW,
+     PMT_RENSOL.`ITEM_UNID` AS PMT_RENSOL_ITEM_UNID,
+     PMT_RENSOL.`ITEMS` AS PMT_RENSOL_ITEMS,
+     PMT_RENSOL.`ITEMS_LABEL` AS PMT_RENSOL_ITEMS_LABEL,
+     PMT_RENSOL.`UNIDAD` AS PMT_RENSOL_UNIDAD
+FROM
+     `PMT_ENCSOL` PMT_ENCSOL INNER JOIN `PMT_RENSOL` PMT_RENSOL ON PMT_ENCSOL.`APP_NUMBER` = PMT_RENSOL.`APP_NUMBER`
+WHERE
+     PMT_ENCSOL.`APP_NUMBER` = $P{CASO}]]>
+	</queryString>
+	<field name="PMT_ENCSOL_APP_UID" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_APP_NUMBER" class="java.lang.Integer"/>
+	<field name="PMT_ENCSOL_APP_STATUS" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_COMENTARIOS_SOLICITUD" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_DATE_SOL" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_FAS_APROB" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_FECHA_ALMACEN" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_FS_AREA_SOL" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_FS_FECHA_SOL" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_NUMERO_SOLICITUD" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_FS_NOMBRE_SOL" class="java.lang.String"/>
+	<field name="PMT_ENCSOL_FAS_SUPER" class="java.lang.String"/>
+	<field name="PMT_RENSOL_APP_UID" class="java.lang.String"/>
+	<field name="PMT_RENSOL_APP_NUMBER" class="java.lang.Integer"/>
+	<field name="PMT_RENSOL_APP_STATUS" class="java.lang.String"/>
+	<field name="PMT_RENSOL_ROW" class="java.lang.Integer"/>
+	<field name="PMT_RENSOL_ITEM_UNID" class="java.lang.Integer"/>
+	<field name="PMT_RENSOL_ITEMS" class="java.lang.String"/>
+	<field name="PMT_RENSOL_ITEMS_LABEL" class="java.lang.String"/>
+	<field name="PMT_RENSOL_UNIDAD" class="java.lang.String"/>
+	<variable name="PMT_ENCSOL_FS_FECHA_SOL_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{PMT_ENCSOL_FS_FECHA_SOL}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="178" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="83" width="572" height="71" backcolor="#EFF7FF" uuid="ebc21ba2-a095-42c6-bfa3-afc5b8e5c83d"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<image>
+				<reportElement x="0" y="0" width="93" height="60" uuid="2a68d9f7-43f2-4c9e-8b66-9e89882abb03"/>
+				<imageExpression><![CDATA["repo:logo_migracion.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Texto Contenido" x="20" y="89" width="117" height="16" uuid="16e542b2-657e-4241-a856-b26b44e3c2f9"/>
+				<text><![CDATA[NÚMERO DE CASO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Texto Contenido" x="138" y="89" width="100" height="16" uuid="77471f00-c4db-4d30-88bd-ba8ca225df0b"/>
+				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_APP_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="20" y="105" width="117" height="16" uuid="2a5570e6-0c9d-409e-a929-66c87ab05a5c"/>
+				<text><![CDATA[FECHA DE SOLICITUD:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Texto Contenido" x="138" y="105" width="100" height="16" uuid="8d88ffa6-8d28-422d-a42a-d85b15cf9ac8"/>
+				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_FECHA_SOL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="281" y="89" width="91" height="16" uuid="40e0f171-d23b-473e-b9ee-bb4e4b2e773b"/>
+				<text><![CDATA[DEPARTAMENTO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Texto Contenido" x="372" y="89" width="177" height="16" uuid="dac94d6e-3719-44e9-a407-6cb5e84b864c"/>
+				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_AREA_SOL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="281" y="105" width="91" height="16" uuid="d6ff747a-cff9-41f7-8004-de79929f3203"/>
+				<text><![CDATA[SOLICITADO POR:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Texto Contenido" x="372" y="105" width="177" height="16" uuid="4bc80224-b11e-46dc-8803-36fa45419902"/>
+				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FS_NOMBRE_SOL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Texto Contenido" x="20" y="121" width="117" height="16" uuid="bf7097df-ace6-4d91-986e-21d64b22f6cf"/>
+				<text><![CDATA[JEFE INMEDIATO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Texto Contenido" x="138" y="121" width="411" height="16" uuid="becf2933-0b09-431c-8cba-a5407290a28c"/>
+				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_FAS_SUPER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="14" width="492" height="16" uuid="86263e85-d604-441b-a857-9ade49f5d3ea"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SERVICIO NACIONAL DE MIGRACIÓN PANAMÁ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="0" y="67" width="572" height="16" backcolor="#99CCFF" uuid="46837b12-e5b9-4cf9-963e-f0722d25c48a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOLICITUD DE MATERIALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="572" height="16" uuid="37042bf9-660d-4312-9369-5ef0300ad33c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECCIÓN DE ALMACEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Texto Contenido" x="20" y="137" width="117" height="16" uuid="29ed86c7-ca79-4e72-83e7-c73556c9d2b0"/>
+				<text><![CDATA[COMENTARIO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Texto Contenido" x="138" y="137" width="411" height="16" uuid="723020dd-f754-4ff0-a55d-afea2870a47f"/>
+				<textFieldExpression><![CDATA[$F{PMT_ENCSOL_COMENTARIOS_SOLICITUD}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="27" y="2" width="86" height="20" backcolor="#99CCFF" uuid="e840b092-8315-48e4-93eb-fd756538ce70"/>
+				<text><![CDATA[ITEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="113" y="2" width="291" height="20" backcolor="#99CCFF" uuid="d1a496f6-59c9-4dd6-810b-eed939fe2e3b"/>
+				<text><![CDATA[DESCRIPCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="404" y="2" width="100" height="20" backcolor="#99CCFF" uuid="08ba1841-966d-4d68-b5b9-132ccadfedaf"/>
+				<text><![CDATA[UNIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="504" y="2" width="68" height="20" backcolor="#99CCFF" uuid="0bec7a12-c378-4e45-a474-7e583be49190"/>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Colummna Header" mode="Opaque" x="0" y="2" width="27" height="20" backcolor="#99CCFF" uuid="2bec0f5c-bc58-41d4-88f4-57b158327587"/>
+				<text><![CDATA[NRO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="27" y="0" width="86" height="20" uuid="2e1eba47-c3f5-4ce1-9ead-53ff8f9b0b9c"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="0" width="291" height="20" uuid="fe46351b-dc60-4075-b133-515096ffec0b"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEMS_LABEL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="0" width="100" height="20" uuid="83cecbc2-ed61-4179-9c83-1424fa8a75b2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{PMT_RENSOL_UNIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="504" y="0" width="68" height="20" uuid="4144843d-de0b-4a8a-85f7-fb5e21a8ba7b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{PMT_RENSOL_ITEM_UNID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="27" height="20" uuid="d2b9903b-b140-4d07-8e05-a0dad55fee44"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="451" y="9" width="80" height="20" uuid="b7d4b0ba-b231-4f87-b33f-3580213095e9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["PAGINA "+$V{PAGE_NUMBER}+" DE"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="532" y="9" width="40" height="20" uuid="9ccea06e-801a-411f-9928-da9f2e068d17"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="9" width="100" height="20" uuid="22a14afd-3087-450f-897d-e8b32cee3b22"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="93">
+			<staticText>
+				<reportElement x="243" y="23" width="99" height="20" uuid="952e164d-8405-48b2-8f9c-4df6886f9d95"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORIZADO POR:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="203" y="88" width="180" height="1" uuid="d3758c4f-b4a4-4fb5-aa84-3bb6854e5ac2"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
