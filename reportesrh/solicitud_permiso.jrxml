@@ -306,7 +306,7 @@ where
 					</textElement>
 					<text><![CDATA[MOTIVO:]]></text>
 				</staticText>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="260" y="180" width="202" height="20" uuid="2b8f0c0b-5e6b-4b77-b18d-970e941dc10d"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -314,7 +314,7 @@ where
 					</textElement>
 					<textFieldExpression><![CDATA[$F{CANTIDAD_DIAS}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="260" y="200" width="202" height="20" uuid="8d8efa16-f4cb-44e0-a6f0-4f70a203281b"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -322,7 +322,7 @@ where
 					</textElement>
 					<textFieldExpression><![CDATA[$F{CANTIDAD_HORAS}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="260" y="220" width="202" height="20" uuid="8d2b4296-35cb-4469-822b-0c5e0cf97d00"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -330,7 +330,7 @@ where
 					</textElement>
 					<textFieldExpression><![CDATA[$F{CANTIDAD_MINUTOS}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="260" y="240" width="202" height="20" uuid="df22eb88-cded-45d7-9e21-a5e897877fd0"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -338,7 +338,7 @@ where
 					</textElement>
 					<textFieldExpression><![CDATA[$F{FECHA_1}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Opaque" x="260" y="260" width="202" height="20" uuid="76a9b9ec-a031-4de3-a3a0-0f2bb393a518"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -346,7 +346,7 @@ where
 					</textElement>
 					<textFieldExpression><![CDATA[$F{HORA_DESDE}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="260" y="280" width="202" height="20" uuid="66a8480a-ee0a-4ef5-a615-e3691e49e8f6"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -354,7 +354,7 @@ where
 					</textElement>
 					<textFieldExpression><![CDATA[$F{FECHA_2}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="260" y="300" width="202" height="20" uuid="8df6590f-59d7-4db9-a02e-33f5477090ca"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>

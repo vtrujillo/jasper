@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="solicitud_vacaciones" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f0ca0fe3-6541-4e7e-8d18-c8061c215828">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="80"/>
 	<parameter name="NUM_CASO" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[126]]></defaultValueExpression>
 	</parameter>
@@ -211,7 +211,7 @@ WHERE
 					</textElement>
 					<text><![CDATA[FIRMA DEL SOLICITANTE]]></text>
 				</staticText>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="252" y="20" width="202" height="20" uuid="81b66618-1224-420d-a007-1cc9cf42915c"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -219,7 +219,7 @@ WHERE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{NOMBRE_JEFE_OIRH}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="252" y="40" width="202" height="20" uuid="30139d5f-cb8f-43c7-986b-35537f821c78"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -227,7 +227,7 @@ WHERE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="253" y="60" width="202" height="20" uuid="a6d7533c-83d5-498a-8535-be54e27886c6"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -235,7 +235,7 @@ WHERE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{CEDULA}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="252" y="80" width="202" height="20" uuid="d41c6e03-16b6-4f5f-9e3c-b1a607a247dd"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -243,7 +243,7 @@ WHERE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{POSICION}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="252" y="100" width="202" height="20" uuid="3cff2983-b628-448b-b8b4-253b74e5c1b9"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -251,7 +251,7 @@ WHERE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{UNIDAD}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="252" y="140" width="202" height="20" uuid="1e860c91-63ea-4f0c-989b-110da1bf09bd"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
@@ -259,7 +259,7 @@ WHERE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{FECHA_INICIO}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement mode="Transparent" x="252" y="160" width="202" height="20" uuid="9d889e60-0a1e-480f-8e18-79ed36831e6b"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif"/>
