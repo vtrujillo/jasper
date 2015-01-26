@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="autorizacion_tiempo_compensatorio" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1b685755-acb7-4abc-ad91-e4293f196541">
 	<property name="ireport.zoom" value="0.75"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="810"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="NUM_CASO" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[61]]></defaultValueExpression>
 	</parameter>

@@ -2,9 +2,9 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3e924d08-edd3-4b4f-b1a2-f145fa6ac79a">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="512"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="NUM_CASO" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[9]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[select
@@ -133,7 +133,7 @@ where
 				</textElement>
 				<text><![CDATA[FECHA:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="211" y="40" width="300" height="20" uuid="3ec9565d-e607-462f-807a-d0d31180b5a2"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -152,7 +152,7 @@ where
 				</textElement>
 				<text><![CDATA[SOLICITANTE:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="211" y="60" width="300" height="20" uuid="90f20e36-026b-4aad-a854-a1e196113179"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -171,7 +171,7 @@ where
 				</textElement>
 				<text><![CDATA[POSICIÓN No:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="211" y="80" width="300" height="20" uuid="1772495d-43b8-4ec4-96ef-ec14fbb62fb5"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -190,7 +190,7 @@ where
 				</textElement>
 				<text><![CDATA[CÉDULA:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="211" y="100" width="300" height="20" uuid="a02b2f4a-034d-4d79-8887-fb779c6f689d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -209,7 +209,7 @@ where
 				</textElement>
 				<text><![CDATA[UNIDAD ADMINISTRATIVA:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="211" y="120" width="300" height="20" uuid="82b6fbc5-fd7c-495c-a895-e782235aadb8"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -228,7 +228,7 @@ where
 				</textElement>
 				<text><![CDATA[NÚMERO DE CASO:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="211" y="140" width="300" height="20" uuid="9b51fd5f-80d7-4c21-9842-ade79508cf46"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -257,7 +257,7 @@ where
 				</textElement>
 				<text><![CDATA[DÍAS:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="212" y="219" width="300" height="20" uuid="2b8f0c0b-5e6b-4b77-b18d-970e941dc10d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -276,7 +276,7 @@ where
 				</textElement>
 				<text><![CDATA[HORAS:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="212" y="239" width="300" height="20" uuid="8d8efa16-f4cb-44e0-a6f0-4f70a203281b"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -295,7 +295,7 @@ where
 				</textElement>
 				<text><![CDATA[MINUTOS:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="212" y="259" width="300" height="20" uuid="8d2b4296-35cb-4469-822b-0c5e0cf97d00"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -314,7 +314,7 @@ where
 				</textElement>
 				<text><![CDATA[EFECTIVOS DESDE EL DÍA:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="212" y="279" width="300" height="20" uuid="df22eb88-cded-45d7-9e21-a5e897877fd0"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -333,7 +333,7 @@ where
 				</textElement>
 				<text><![CDATA[DESDE LAS HORAS:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="212" y="299" width="300" height="20" uuid="76a9b9ec-a031-4de3-a3a0-0f2bb393a518"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -352,7 +352,7 @@ where
 				</textElement>
 				<text><![CDATA[HASTA EL DÍA:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="212" y="319" width="300" height="20" uuid="66a8480a-ee0a-4ef5-a615-e3691e49e8f6"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -371,7 +371,7 @@ where
 				</textElement>
 				<text><![CDATA[HASTA LAS HORAS:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="212" y="339" width="300" height="20" uuid="8df6590f-59d7-4db9-a02e-33f5477090ca"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
@@ -390,7 +390,7 @@ where
 				</textElement>
 				<text><![CDATA[MOTIVO:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Transparent" x="212" y="359" width="300" height="20" uuid="b8081616-8d4a-49bb-a03f-91d691c87c57"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="SansSerif"/>
