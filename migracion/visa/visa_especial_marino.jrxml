@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="visa_especial_marinos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b1c6166-d201-4d2f-af7c-e4c2d12e1cd1">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="199"/>
+	<property name="ireport.y" value="391"/>
 	<parameter name="APP_NUMBER" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[SELECT
@@ -476,26 +476,26 @@ WHERE
 				<reportElement x="420" y="625" width="133" height="15" uuid="484bfbef-fac0-43a2-91ed-3b79e627355f"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="21" y="600" width="133" height="25" uuid="74c3906b-b4b9-4454-8831-7e0c2c9a87d6"/>
-				<textElement textAlignment="Center"/>
+				<reportElement x="21" y="598" width="133" height="27" uuid="74c3906b-b4b9-4454-8831-7e0c2c9a87d6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[SERVICIO NACIONAL
 DE MIGRACIÓN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="287" y="600" width="133" height="25" uuid="3c943622-4cd9-4e99-94e8-43f49a27158c"/>
-				<textElement textAlignment="Center"/>
+				<reportElement x="287" y="598" width="133" height="27" uuid="3c943622-4cd9-4e99-94e8-43f49a27158c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[PUERTO DE
 ABORDAJE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="154" y="600" width="133" height="25" uuid="6cec87d7-73c5-435f-b482-f2bc81ae3e42"/>
-				<textElement textAlignment="Center"/>
+				<reportElement x="154" y="598" width="133" height="27" uuid="6cec87d7-73c5-435f-b482-f2bc81ae3e42"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[AEROPUERTO DE
 TOCUMEN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="420" y="600" width="133" height="25" uuid="d4fbcb27-d649-4424-bdde-770baa23e021"/>
-				<textElement textAlignment="Center"/>
+				<reportElement x="420" y="598" width="133" height="27" uuid="d4fbcb27-d649-4424-bdde-770baa23e021"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[OK TO BOARD
 AUTORIZACIÓN]]></text>
 			</staticText>
