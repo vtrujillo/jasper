@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="visa_especial_marinos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b1c6166-d201-4d2f-af7c-e4c2d12e1cd1">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="391"/>
+	<property name="ireport.y" value="343"/>
 	<parameter name="APP_NUMBER" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[SELECT
@@ -94,7 +94,7 @@ WHERE
 						<font isBold="true"/>
 						<paragraph leftIndent="3"/>
 					</textElement>
-					<text><![CDATA[NUMERO DE VISA:]]></text>
+					<text><![CDATA[NÚMERO DE VISA:]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="163" y="135" width="150" height="20" uuid="24dc0a7a-e891-47a1-914b-bc76309a214c"/>
