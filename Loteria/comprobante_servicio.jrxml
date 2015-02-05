@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1454c12f-bf7d-4cda-8b3f-2acb97f98506">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="48"/>
+	<property name="ireport.y" value="24"/>
 	<parameter name="ORDEN_COMPRA" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -388,7 +388,9 @@ mxenccpaserv.`ORDEN_COMPRA` = $P{ORDEN_COMPRA}]]>
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{ITEM}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
@@ -439,7 +441,7 @@ mxenccpaserv.`ORDEN_COMPRA` = $P{ORDEN_COMPRA}]]>
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="338">
+		<band height="337">
 			<elementGroup>
 				<staticText>
 					<reportElement mode="Opaque" x="0" y="0" width="55" height="20" backcolor="#99CCFF" uuid="3a918a41-abf5-411f-bc8d-bf3b7cc49c8e"/>

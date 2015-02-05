@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1454c12f-bf7d-4cda-8b3f-2acb97f98506">
-	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="848"/>
+	<property name="ireport.y" value="160"/>
 	<parameter name="ORDEN_COMPRA" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT
 	mxenccpa.`ID_COMPRA` AS mxenccpa_ID_COMPRA,
-	DATE_FORMAT(mxenccpa.`FECHA`, '%d/%m/%Y') AS mxenccpa_FECHA,
-	mxctainv.`COD_PROVEE` AS mxctainv_COD_PROVEE,
-    mxctapro.`DESCRIPCION` AS mxctapro_DESCRIPCION,
-    mxenccpa.`ORDEN_COMPRA` AS mxenccpa_ORDEN_COMPRA,
-	mxenccpa.`FACTURA` AS mxenccpa_FACTURA,
-	FN_DEP_NAME(mxenccpa.`DEP_ID`) AS mxenccpa_DEP,
-	mxrencpa.`CANTIDAD` AS mxrencpa_CANTIDAD,
-    mxrencpa.`UNIDAD` AS mxrencpa_UNIDAD,
-    mxctainv.`UNIDAD` AS mxctainv_UNIDAD,
-	mxctainv.`DESCRIPCION` AS mxctainv_DESCRIPCION,
-	mxrencpa.`COSTO` AS mxrencpa_COSTO,
-    mxrencpa.`COSTO_TOT` AS mxrencpa_COSTO_TOT,
-	mxenccpa.`SUB_TOTAL` AS mxenccpa_SUB_TOTAL,
-	mxctainv.`ITBM` AS mxctainv_ITBM,
-    mxenccpa.`ITBM` AS mxenccpa_ITBM,
-    mxenccpa.`TOTAL` AS mxenccpa_TOTAL,
-	mxctainv.`ITEM` AS mxctainv_ITEM,
-    mxrencpa.`ITEM` AS mxrencpa_ITEM,
 	mxenccpa.`DESCUENTO` AS mxenccpa_DESCUENTO,
 	mxenccpa.`SUB_TOTAL2` AS mxenccpa_SUB_TOTAL2,
-	mxenccpa.`DESCUENTO2` AS mxenccpa_DESCUENTO2
+	mxenccpa.`DESCUENTO2` AS mxenccpa_DESCUENTO2,
+    mxenccpa.`ORDEN_COMPRA` AS mxenccpa_ORDEN_COMPRA,
+	mxenccpa.`FACTURA` AS mxenccpa_FACTURA,
+	mxenccpa.`SUB_TOTAL` AS mxenccpa_SUB_TOTAL,
+    mxenccpa.`ITBM` AS mxenccpa_ITBM,
+    mxenccpa.`TOTAL` AS mxenccpa_TOTAL,
+	FN_DEP_NAME(mxenccpa.`DEP_ID`) AS mxenccpa_DEP,
+	DATE_FORMAT(mxenccpa.`FECHA`, '%d/%m/%Y') AS mxenccpa_FECHA,
+	mxrencpa.`CANTIDAD` AS mxrencpa_CANTIDAD,
+    mxrencpa.`UNIDAD` AS mxrencpa_UNIDAD,
+	mxrencpa.`COSTO` AS mxrencpa_COSTO,
+    mxrencpa.`COSTO_TOT` AS mxrencpa_COSTO_TOT,
+    mxrencpa.`ITEM` AS mxrencpa_ITEM,
+	mxctainv.`DESCRIPCION` AS mxctainv_DESCRIPCION,
+    mxctapro.`DESCRIPCION` AS mxctapro_DESCRIPCION
 FROM
      `mxenccpa` mxenccpa INNER JOIN `mxrencpa` mxrencpa ON mxenccpa.`ID_COMPRA` = mxrencpa.`ID_COMPRA`
      INNER JOIN `mxctainv` mxctainv ON mxrencpa.`ITEM` = mxctainv.`ITEM`
@@ -38,27 +34,23 @@ WHERE
      mxenccpa.`ORDEN_COMPRA` = $P{ORDEN_COMPRA}]]>
 	</queryString>
 	<field name="mxenccpa_ID_COMPRA" class="java.lang.Integer"/>
-	<field name="mxenccpa_FECHA" class="java.lang.String"/>
-	<field name="mxctainv_COD_PROVEE" class="java.lang.Integer"/>
-	<field name="mxctapro_DESCRIPCION" class="java.lang.String"/>
-	<field name="mxenccpa_ORDEN_COMPRA" class="java.lang.String"/>
-	<field name="mxenccpa_FACTURA" class="java.lang.String"/>
-	<field name="mxenccpa_DEP" class="java.lang.String"/>
-	<field name="mxrencpa_CANTIDAD" class="java.lang.Integer"/>
-	<field name="mxrencpa_UNIDAD" class="java.lang.String"/>
-	<field name="mxctainv_UNIDAD" class="java.lang.String"/>
-	<field name="mxctainv_DESCRIPCION" class="java.lang.String"/>
-	<field name="mxrencpa_COSTO" class="java.math.BigDecimal"/>
-	<field name="mxrencpa_COSTO_TOT" class="java.math.BigDecimal"/>
-	<field name="mxenccpa_SUB_TOTAL" class="java.math.BigDecimal"/>
-	<field name="mxctainv_ITBM" class="java.math.BigDecimal"/>
-	<field name="mxenccpa_ITBM" class="java.math.BigDecimal"/>
-	<field name="mxenccpa_TOTAL" class="java.math.BigDecimal"/>
-	<field name="mxctainv_ITEM" class="java.lang.String"/>
-	<field name="mxrencpa_ITEM" class="java.lang.String"/>
 	<field name="mxenccpa_DESCUENTO" class="java.math.BigDecimal"/>
 	<field name="mxenccpa_SUB_TOTAL2" class="java.math.BigDecimal"/>
 	<field name="mxenccpa_DESCUENTO2" class="java.math.BigDecimal"/>
+	<field name="mxenccpa_ORDEN_COMPRA" class="java.lang.String"/>
+	<field name="mxenccpa_FACTURA" class="java.lang.String"/>
+	<field name="mxenccpa_SUB_TOTAL" class="java.math.BigDecimal"/>
+	<field name="mxenccpa_ITBM" class="java.math.BigDecimal"/>
+	<field name="mxenccpa_TOTAL" class="java.math.BigDecimal"/>
+	<field name="mxenccpa_DEP" class="java.lang.String"/>
+	<field name="mxenccpa_FECHA" class="java.lang.String"/>
+	<field name="mxrencpa_CANTIDAD" class="java.lang.Integer"/>
+	<field name="mxrencpa_UNIDAD" class="java.lang.String"/>
+	<field name="mxrencpa_COSTO" class="java.math.BigDecimal"/>
+	<field name="mxrencpa_COSTO_TOT" class="java.math.BigDecimal"/>
+	<field name="mxrencpa_ITEM" class="java.lang.String"/>
+	<field name="mxctainv_DESCRIPCION" class="java.lang.String"/>
+	<field name="mxctapro_DESCRIPCION" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
