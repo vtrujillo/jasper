@@ -391,9 +391,9 @@ where APP_NUMBER = $P{NUM_CASO}]]>
 				<textFieldExpression><![CDATA[$F{FECHA_PROCESO}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="0" y="400" width="572" height="50" uuid="119a6d37-4f80-42d5-a06a-f3ac3681b6b4"/>
+				<reportElement mode="Transparent" x="0" y="400" width="572" height="60" uuid="119a6d37-4f80-42d5-a06a-f3ac3681b6b4"/>
 				<textElement textAlignment="Justified" verticalAlignment="Top">
-					<font fontName="SansSerif"/>
+					<font fontName="SansSerif" size="9"/>
 					<paragraph leftIndent="3"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ESTATUS}]]></textFieldExpression>
