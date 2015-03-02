@@ -52,7 +52,7 @@ where APP_NUMBER = $P{NUM_CASO}]]>
 		<band height="720">
 			<image>
 				<reportElement x="86" y="113" width="401" height="494" uuid="867b1932-fc82-4133-89e6-5b5e76024df8"/>
-				<imageExpression><![CDATA["repo:ma_migracion.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["repo:ma_mitradel.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</background>
@@ -81,7 +81,7 @@ where APP_NUMBER = $P{NUM_CASO}]]>
 			</staticText>
 			<image>
 				<reportElement mode="Transparent" x="10" y="0" width="540" height="73" uuid="7a95d2e0-2e3c-4537-8a93-2aa312305bb1"/>
-				<imageExpression><![CDATA["repo:logo_migracion.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["repo:logo_mitradel.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement mode="Transparent" x="86" y="80" width="400" height="20" uuid="18fab184-1d20-4e6b-82c7-606125c1f857"/>

@@ -65,7 +65,7 @@ where
 		<band height="752">
 			<image>
 				<reportElement x="77" y="129" width="401" height="494" uuid="1fd2581a-6889-43c7-bb0a-d3c533d11d84"/>
-				<imageExpression><![CDATA["repo:ma_migracion.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["repo:ma_mitradel.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</background>
@@ -80,7 +80,7 @@ where
 			</staticText>
 			<image>
 				<reportElement mode="Transparent" x="15" y="0" width="540" height="73" uuid="0a15edaa-d583-4316-99c6-f2bd11cad364"/>
-				<imageExpression><![CDATA["repo:logo_migracion.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["repo:logo_mitradel.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement mode="Transparent" x="56" y="20" width="450" height="20" uuid="e3dbbef6-e730-46e9-8c4f-41db8a7cf5b1"/>

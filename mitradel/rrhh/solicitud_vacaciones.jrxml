@@ -76,7 +76,7 @@ WHERE
 		<band height="752">
 			<image>
 				<reportElement x="77" y="129" width="401" height="494" uuid="caa67ef4-6f8f-49bc-a1c8-e6ad34ab8b23"/>
-				<imageExpression><![CDATA["repo:ma_migracion.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["repo:ma_mitradel.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</background>
@@ -112,7 +112,7 @@ WHERE
 			</staticText>
 			<image>
 				<reportElement x="15" y="0" width="540" height="73" uuid="6d612bc0-9f6e-40d9-8211-3c2dde382298"/>
-				<imageExpression><![CDATA["repo:logo_migracion.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["repo:logo_mitradel.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
