@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="solicitud_vacaciones" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f0ca0fe3-6541-4e7e-8d18-c8061c215828">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="112"/>
+	<parameter name="NUM_CASO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[126]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select
+	PMT_VACACIONES.`APP_NUMBER`,
+	NOMBRE_JEFE_OIRH,
+	NOMBRE, CEDULA,
+	POSICION,
+	UNIDAD,
+	FECHA_1,
+	NUMERO_CASO,
+	CANTIDAD_DIAS,
+	FECHA_INICIO,
+	FECHA_REINTEGRO,
+	NUMERO_RESOLUCION,
+	DATE_FORMAT(FECHA_RESOLUCION, "%d-%m-%Y") as FECHA_RESOLUCION,
+	DIAS,
+	FECHA_2
+from
+	PMT_VACACIONES INNER JOIN `PMT_VACACIONES_RENGLONES` ON PMT_VACACIONES.`APP_NUMBER` = PMT_VACACIONES_RENGLONES.`APP_NUMBER`
+WHERE
+	PMT_VACACIONES.`APP_NUMBER` = $P{NUM_CASO}]]>
+	</queryString>
+	<field name="APP_NUMBER" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOMBRE_JEFE_OIRH" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOMBRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CEDULA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="POSICION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="UNIDAD" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUMERO_CASO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CANTIDAD_DIAS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_INICIO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_REINTEGRO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUMERO_RESOLUCION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_RESOLUCION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DIAS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752">
+			<image>
+				<reportElement x="77" y="129" width="401" height="494" uuid="caa67ef4-6f8f-49bc-a1c8-e6ad34ab8b23"/>
+				<imageExpression><![CDATA["repo:ma_migracion.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="100">
+			<staticText>
+				<reportElement x="52" y="0" width="450" height="20" uuid="f7c9921e-c2e2-4613-82bb-3455d7cbc4a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPÚBLICA DE PANAMÁ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="40" width="450" height="20" uuid="b47addb4-e6bc-42f2-9dd9-ff66fca0120d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OFICINA INSTITUCIONAL DE RECURSOS HUMANOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="20" width="450" height="20" uuid="59b198f6-68b7-4cfa-b0bb-8b07028ca744"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SERVICIO NACIONAL DE MIGRACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="80" width="400" height="20" uuid="096cd9e1-73d9-4349-8f92-4bb84582718a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOLICITUD DE VACACIONES]]></text>
+			</staticText>
+			<image>
+				<reportElement x="15" y="0" width="540" height="73" uuid="6d612bc0-9f6e-40d9-8211-3c2dde382298"/>
+				<imageExpression><![CDATA["repo:logo_migracion.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="359" splitType="Stretch">
+			<elementGroup>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="7" y="201" width="540" height="45" uuid="5d4a2db1-da8f-443e-a4b8-b0cb3c6adbf6"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Por este medio le informo a usted que haré uso de " + ($F{CANTIDAD_DIAS} .equals(null)?" ":$F{CANTIDAD_DIAS} ) +" días de vacaciones a que tengo derecho, las cuales serán efectiva a partir del día "+ $F{FECHA_1}+"."+"\n\n"+"Igualmente informo que me reintegraré a mis labores el día " + ($F{FECHA_REINTEGRO}. equals(null)?" ":$F{FECHA_REINTEGRO}) + "."]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="20" width="150" height="20" uuid="179c87f4-79c6-407b-9cf3-a4b86eb511db"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[PARA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="40" width="150" height="20" uuid="f7c6d6f9-cc00-4fae-b89f-6f6ef7c5bef4"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[DE:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="102" y="60" width="150" height="20" uuid="144cd430-4ccf-4afb-8990-1163d780d5c5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[CÉDULA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="100" y="80" width="150" height="20" uuid="895cba68-dd3b-4476-8c59-c3c1e6cc8bac"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[POSICIÓN No:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="100" width="150" height="20" uuid="54b4e629-5d18-49cc-acea-eca19f58865b"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[UNIDAD ADMINISTRATIVA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="253" y="121" width="201" height="20" uuid="3b889156-e1b3-4ddc-8fa1-9f1f39fd2d55"/>
+					<textElement verticalAlignment="Middle">
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[SOLICITUD DE VACACIONES]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="120" width="150" height="20" uuid="6f3f674a-9faf-47bc-bca0-14963b5ce1e0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[ASUNTO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="140" width="150" height="20" uuid="b9473f2b-7102-4d59-879e-4a09b850e062"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[FECHA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="160" width="150" height="20" uuid="fcd13747-243a-467d-8deb-b90a4f81abf4"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[NÚMERO DE CASO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="289" y="323" width="249" height="20" uuid="b26563f0-7ec1-4940-8319-adc5ceb597ce"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vo.Bo. SUPERIOR INMEDIATO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="15" y="323" width="249" height="20" uuid="3ab4581c-7b0b-4cf3-9dfd-963e5bd757c1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[FIRMA DEL SOLICITANTE]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="252" y="20" width="202" height="20" uuid="81b66618-1224-420d-a007-1cc9cf42915c"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOMBRE_JEFE_OIRH}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="252" y="40" width="202" height="20" uuid="30139d5f-cb8f-43c7-986b-35537f821c78"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="253" y="60" width="202" height="20" uuid="a6d7533c-83d5-498a-8535-be54e27886c6"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CEDULA}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="252" y="80" width="202" height="20" uuid="d41c6e03-16b6-4f5f-9e3c-b1a607a247dd"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{POSICION}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="252" y="100" width="202" height="20" uuid="3cff2983-b628-448b-b8b4-253b74e5c1b9"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{UNIDAD}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="252" y="140" width="202" height="20" uuid="1e860c91-63ea-4f0c-989b-110da1bf09bd"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FECHA_INICIO}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="252" y="160" width="202" height="20" uuid="9d889e60-0a1e-480f-8e18-79ed36831e6b"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NUMERO_CASO}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="101" y="40" width="353" height="1" uuid="38b06449-f2d0-4371-a830-da55be97f536"/>
+				</line>
+				<line>
+					<reportElement mode="Opaque" x="101" y="60" width="353" height="1" uuid="32c10962-37a0-4d25-bbe2-26ce04878a6e"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="101" y="80" width="353" height="1" uuid="aab1395f-9426-46b4-b117-a05fba6c9585"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="101" y="100" width="353" height="1" uuid="87091b41-4622-45d5-b69d-96a12cb1f0d5"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="101" y="120" width="353" height="1" uuid="53d02706-9506-4872-909b-ddaa33f16020"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="101" y="140" width="353" height="1" uuid="faf5496f-a9b9-443b-9a4a-b9962fb387f4"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="101" y="160" width="353" height="1" uuid="d69f1da3-648b-437d-813a-e16e415c72a9"/>
+				</line>
+				<line>
+					<reportElement x="289" y="323" width="249" height="1" uuid="31993cce-df02-404c-b40c-f14037429a38"/>
+				</line>
+				<line>
+					<reportElement x="15" y="323" width="249" height="1" uuid="fd9cd3d8-4130-4044-a22c-0a1204147e31"/>
+				</line>
+				<rectangle>
+					<reportElement mode="Transparent" x="101" y="20" width="353" height="160" uuid="e0968f96-a3df-4d26-a29e-3f31a402b7c0"/>
+				</rectangle>
+				<line>
+					<reportElement mode="Transparent" x="251" y="20" width="1" height="160" uuid="73204568-d7ba-434a-a118-a93fa5c3b365"/>
+				</line>
+			</elementGroup>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="130">
+			<staticText>
+				<reportElement x="67" y="17" width="423" height="20" uuid="89ae1877-f20c-4edf-8837-611dc7da36e7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PARA EL USO DE LA OFICINA INSTITUCIONAL DE RECURCURSOS HUMANOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="70" width="224" height="20" uuid="c1659d58-38bb-4ccf-85fa-77a6ed0e9217"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Vacaciones correspondientes a:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="109" width="94" height="20" uuid="3da58d05-21dd-4a4b-be56-bb347ee532cd"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Días]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="109" width="100" height="20" uuid="48e6e064-944b-441e-bb94-f02d98c9c7f5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="109" width="160" height="20" uuid="a175205a-053a-42bd-b87b-caaba0176d0c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Resolución]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="0" width="160" height="20" uuid="0bb3e9dd-40a0-4c34-a9fa-c8c592ea664b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NUMERO_RESOLUCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="100" height="20" uuid="1b5420d7-7ce5-42fa-a4d6-80ea8eec38b2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FECHA_RESOLUCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="94" height="20" uuid="0712408a-5f52-4f54-b60b-6ba66af2d43b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DIAS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="63">
+			<line>
+				<reportElement x="289" y="43" width="249" height="1" uuid="51da0bb5-f443-40bf-bbf8-c77ab01496d0"/>
+			</line>
+			<staticText>
+				<reportElement x="289" y="43" width="249" height="20" uuid="f6055770-c88d-4c61-81f0-b2f8cb9b5cab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRMA DEL JEFE DE LA OIRH]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="43" width="249" height="20" uuid="70b70ea6-6cdc-458f-be48-93cbad10be62"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FECHA DE NOTIFICACIÓN:  "+ ($F{FECHA_2} .equals(null)?" ":$F{FECHA_2} )]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

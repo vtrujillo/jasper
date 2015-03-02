@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mision_oficial" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c585d78-6bfd-42b7-a7ee-6b9de6612668">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="336"/>
+	<parameter name="NUM_CASO" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+	APP_NUMBER,
+	FECHA_INICIO,
+	NOMBRE,
+	POSICION,
+	CEDULA,
+	UNIDAD,
+	FECHA_1,
+	HORA_DESDE,
+	FECHA_2,
+	HORA_HASTA,
+	COMENTARIO_SOLICITANTE,
+	NUMERO_CASO
+FROM
+	PMT_MISION
+where
+	APP_NUMBER = $P{NUM_CASO}]]>
+	</queryString>
+	<field name="APP_NUMBER" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_INICIO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NOMBRE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="POSICION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CEDULA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="UNIDAD" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HORA_DESDE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FECHA_2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HORA_HASTA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COMENTARIO_SOLICITANTE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NUMERO_CASO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752">
+			<image>
+				<reportElement x="77" y="129" width="401" height="494" uuid="1fd2581a-6889-43c7-bb0a-d3c533d11d84"/>
+				<imageExpression><![CDATA["repo:ma_migracion.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="86" y="80" width="400" height="20" uuid="7882adcc-4bcd-4582-8de9-95bccd0812a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MISIÓN OFICIAL]]></text>
+			</staticText>
+			<image>
+				<reportElement mode="Transparent" x="15" y="0" width="540" height="73" uuid="0a15edaa-d583-4316-99c6-f2bd11cad364"/>
+				<imageExpression><![CDATA["repo:logo_migracion.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Transparent" x="56" y="20" width="450" height="20" uuid="e3dbbef6-e730-46e9-8c4f-41db8a7cf5b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SERVICIO NACIONAL DE MIGRACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="56" y="40" width="450" height="20" uuid="b47f38ef-ff3b-419d-b04d-e544bd7d94a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OFICINA INSTITUCIONAL DE RECURSOS HUMANOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="56" y="0" width="450" height="20" uuid="28272f63-a8c8-4c54-a3a0-4806d6ccef22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPÚBLICA DE PANAMA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="320" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="77" y="140" width="400" height="20" uuid="af9c0f28-056f-457a-8b94-809f1f60681c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DETALLES]]></text>
+			</staticText>
+			<elementGroup>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="0" width="150" height="20" uuid="1822196e-dd20-4609-b029-89292d3a1dc4"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[FECHA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="20" width="150" height="20" uuid="39e1342d-6965-4460-87f8-0490c5b4f5b1"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[SOLICITANTE:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="40" width="150" height="20" uuid="26d5ec08-903e-43b4-901a-e12fada65f5e"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[POSICIÓN No:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="60" width="150" height="20" uuid="8d8c6535-32d5-4eab-9c3b-cdf2585a63c3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[CÉDULA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="80" width="150" height="20" uuid="691bc21a-851c-4bb0-a181-233d024bedef"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[UNIDAD ADMINISTRATIVA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="101" y="100" width="150" height="20" uuid="8bf8eca1-ca2b-4ece-bf42-107f11aa0507"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[NÚMERO DE CASO:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="0" width="202" height="20" uuid="63e58781-b528-41a7-a942-3e0d3091b4b5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FECHA_INICIO}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="20" width="202" height="20" uuid="67046b60-6373-4c61-ab57-1c4831cdb3f3"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="40" width="202" height="20" uuid="97346f73-7c6d-48c9-8cc0-111f598738fb"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{POSICION}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="60" width="202" height="20" uuid="b5eea314-cc05-42e7-ace0-ea53d2033cc9"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CEDULA}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="80" width="202" height="20" uuid="c8172a7e-181a-4ed5-8997-afd55224f2ed"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{UNIDAD}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="100" width="202" height="20" uuid="a9da4827-ad6b-40eb-a6a3-a0ddd5039800"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{APP_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="101" y="80" width="353" height="1" uuid="1d6a813a-7dcd-4527-8489-824ea4867b97"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="101" y="20" width="353" height="1" uuid="921676b5-0162-4c2c-8fd6-c6dd2a7751f3"/>
+				</line>
+				<line>
+					<reportElement mode="Opaque" x="101" y="40" width="353" height="1" uuid="3c69ee70-b1de-4bb0-bb5e-d91d595e8f56"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="101" y="100" width="353" height="1" uuid="fbe241d6-5f4c-44bd-a9cc-3f920b45c9a0"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="101" y="60" width="353" height="1" uuid="a5e46572-b0aa-471e-87f0-d9993fa0776c"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="251" y="0" width="1" height="120" uuid="18797292-34b9-4f6c-92e0-e63ba1d44da6"/>
+				</line>
+				<rectangle>
+					<reportElement mode="Transparent" x="101" y="0" width="353" height="119" uuid="d17691ab-b76d-4a87-9ead-e92a77c31ea4"/>
+				</rectangle>
+			</elementGroup>
+			<elementGroup>
+				<staticText>
+					<reportElement mode="Transparent" x="102" y="180" width="150" height="20" uuid="0b60a5b1-cc34-48a7-b287-0f82936b3dd5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[EFECTIVO DESDE EL DÍA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="102" y="200" width="150" height="20" uuid="27226758-9aba-4303-903b-5900ee90abc4"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[DESDE LAS HORAS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="102" y="220" width="150" height="20" uuid="55bb29c7-12ce-42d2-9e35-343f475e33ac"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[HASTA EL DÍA:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="102" y="240" width="150" height="20" uuid="b487f112-deea-4133-b61b-d9274f2e4e54"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[HASTA LAS HORAS:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="102" y="260" width="150" height="20" uuid="277bfb4d-580f-43b0-a584-f52d602116c1"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[MOTIVO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Transparent" x="102" y="280" width="150" height="20" uuid="b6e4df77-0900-4ee8-b043-eda52dafdd2d"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" isBold="true"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<text><![CDATA[COMENTARIOS:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="180" width="202" height="20" uuid="2730c2ad-3882-4eaf-a9dd-38994bb79409"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FECHA_1}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="200" width="202" height="20" uuid="efde3f2a-1421-4b5a-baca-58583969e15d"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{HORA_DESDE}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="220" width="202" height="20" uuid="ea19282d-a377-458f-9c8c-973d738352a6"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FECHA_2}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="240" width="202" height="20" uuid="ad063d7d-0aaf-406c-811f-21b158920941"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{HORA_HASTA}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="260" width="202" height="20" uuid="2c658116-8beb-4fe8-b467-ca4342f1fc3b"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA["MISIÓN OFICIAL"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="251" y="280" width="202" height="20" uuid="7a9a3035-1448-4cb3-a713-298f15de6824"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{COMENTARIO_SOLICITANTE}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="102" y="281" width="353" height="1" uuid="f4cd66c0-8ea9-4840-9bf2-cc1a65850748"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="102" y="201" width="353" height="1" uuid="099910d2-3632-49ee-84d2-53eeebbcf90b"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="102" y="241" width="353" height="1" uuid="d6261b48-8cea-4131-a5d8-4462bbe5c305"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="102" y="261" width="353" height="1" uuid="89738fac-890d-4785-aefd-7e1bd01ed72e"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="102" y="221" width="353" height="1" uuid="3fd76bd0-f88b-4bb3-bcd5-570424790d15"/>
+				</line>
+				<line>
+					<reportElement mode="Transparent" x="252" y="181" width="1" height="120" uuid="924c5e33-09ff-4f98-b18f-641f0bfa3fb0"/>
+				</line>
+				<rectangle>
+					<reportElement mode="Transparent" x="101" y="180" width="353" height="120" uuid="fbd3c08e-79d8-41f7-b2b5-f67ec8928cca"/>
+				</rectangle>
+			</elementGroup>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="220" splitType="Stretch">
+			<staticText>
+				<reportElement x="78" y="0" width="400" height="20" uuid="b93e3bc7-6a45-430f-8efd-df77d14bc1f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APROBACIONES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="80" width="140" height="20" uuid="8fd541f8-eeed-421a-8475-59004da7a60e"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE APROBACIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="100" width="249" height="20" uuid="8fa98dd3-4db6-4312-9dc3-b923ac557251"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JEFE DE UNIDAD ADMINISTRATIVA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="180" width="140" height="20" uuid="dbc7c012-63b3-4b2f-9ef6-6bf023037ab1"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA DE NOTIFICACIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="200" width="249" height="20" uuid="b6a04b90-ff8a-4de0-bae3-ac5fa3a3dbb6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRMA DEL JEFE DE LA OIRH]]></text>
+			</staticText>
+			<line>
+				<reportElement x="155" y="100" width="100" height="1" uuid="a5269b89-87ea-4f90-8489-da9b558773a1"/>
+			</line>
+			<line>
+				<reportElement x="289" y="100" width="249" height="1" uuid="32126cb7-3413-4e96-b97e-d3b28f386b7a"/>
+			</line>
+			<line>
+				<reportElement x="155" y="200" width="109" height="1" uuid="6d97348a-dd6f-4733-8e88-5aeedad8a39f"/>
+			</line>
+			<line>
+				<reportElement x="289" y="200" width="249" height="1" uuid="fab66393-3f7a-4867-9f66-114e7bdb4390"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>
