@@ -2,8 +2,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="visa_especial_marinos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b1c6166-d201-4d2f-af7c-e4c2d12e1cd1">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="439"/>
-	<parameter name="APP_NUMBER" class="java.lang.Integer"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="NUMERO_VISA" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[SELECT
 	NUMERO_IMPRESO,
@@ -25,7 +25,7 @@
 FROM
 	PMT_PACIFICO
 WHERE
-	APP_NUMBER=$P{APP_NUMBER}]]>
+	NUMERO_VISA=$P{NUMERO_VISA}]]>
 	</queryString>
 	<field name="NUMERO_IMPRESO" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
