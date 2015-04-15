@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certificacion" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="583e7f05-1399-4b69-92d9-d39066d136a6">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="432"/>
+	<property name="ireport.y" value="368"/>
 	<parameter name="NUM_CASO" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[3947]]></defaultValueExpression>
 	</parameter>
@@ -391,8 +391,8 @@ where APP_NUMBER = $P{NUM_CASO}]]>
 				<textFieldExpression><![CDATA[$F{FECHA_PROCESO}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement mode="Transparent" x="0" y="400" width="572" height="60" uuid="119a6d37-4f80-42d5-a06a-f3ac3681b6b4"/>
-				<textElement textAlignment="Justified" verticalAlignment="Top">
+				<reportElement mode="Transparent" x="0" y="400" width="572" height="60" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="119a6d37-4f80-42d5-a06a-f3ac3681b6b4"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font fontName="SansSerif" size="9"/>
 					<paragraph leftIndent="3"/>
 				</textElement>
