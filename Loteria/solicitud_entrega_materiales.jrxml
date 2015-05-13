@@ -27,6 +27,9 @@
 	<parameter name="PEDIDO" class="java.lang.String">
 		<defaultValueExpression><![CDATA[209]]></defaultValueExpression>
 	</parameter>
+	<parameter name="NUM_SOL" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT
      mxtrainv.`ITEM` AS mxtrainv_ITEM,
@@ -74,7 +77,7 @@ FROM
      `mxencped` mxencped INNER JOIN `mxtrainv` mxtrainv ON mxencped.`NUMERO_PEDIDO` = mxtrainv.`NUMDOC`
      INNER JOIN `mxctainv` mxctainv ON mxtrainv.`ITEM` = mxctainv.`ITEM`
 WHERE
-    mxencped.`NUMERO_PEDIDO` = $P{PEDIDO} AND mxtrainv.`TIPOMOV` = 'SA']]>
+    mxencped.`NUMERO_PEDIDO` = $P{PEDIDO} AND mxtrainv.`TIPOMOV` = 'SA' AND mxencped.`NUM_SOL` = $P{NUM_SOL}]]>
 	</queryString>
 	<field name="mxtrainv_ITEM" class="java.lang.String"/>
 	<field name="mxtrainv_FECHA" class="java.sql.Timestamp"/>
